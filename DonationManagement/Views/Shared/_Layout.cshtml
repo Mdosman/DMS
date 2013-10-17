@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Donation Management MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+
+        <!-- Bootstrap framework -->
+            <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/css/bootstrap.min.css")" />
+            <link rel="stylesheet" href="@Url.Content("~/Content/bootstrap/css/bootstrap-responsive.min.css")" />
+        <!-- breadcrumbs-->
+            <link rel="stylesheet" href="@Url.Content("~/Content/lib/jBreadcrumbs/css/BreadCrumb.css")" />
+        <!-- tooltips-->
+            <link rel="stylesheet" href="@Url.Content("~/Content/lib/qtip2/jquery.qtip.min.css")" />
+        <!-- colorbox -->
+            <link rel="stylesheet" href="@Url.Content("~/Content/lib/colorbox/colorbox.css")" />
+        <!-- code prettify -->
+            <link rel="stylesheet" href="@Url.Content("~/Content/lib/google-code-prettify/prettify.css")" />
+        <!-- notifications -->
+            <link rel="stylesheet" href="@Url.Content("~/Content/lib/sticky/sticky.css")" />  
+        <!-- splashy icons -->
+            <link rel="stylesheet" href="@Url.Content("~/Content/img/splashy/splashy.css")" />
+        <!-- flags -->
+            <link rel="stylesheet" href="@Url.Content("~/Content/img/flags/flags.css")" /> 
+        <!-- calendar -->
+            <link rel="stylesheet" href="@Url.Content("~/Content/lib/fullcalendar/fullcalendar_gebo.css")" />
+            
+        <!-- gebo color theme-->
+            <link rel="stylesheet" href="@Url.Content("~/Content/css/blue.css")" id="link_theme" />
+        <!-- main styles -->
+            <link rel="stylesheet" href="@Url.Content("~/Content/css/style.css")" />
+            
+            <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Sans" />
+    
+        <!-- Favicon -->
+            <link rel="shortcut icon" href="@Url.Content("~/Content/favicon.ico")" />
+        
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/ie.css" />
+            <script src="js/ie/html5.js"></script>
+            <script src="js/ie/respond.min.js"></script>
+            <script src="lib/flot/excanvas.min.js"></script>
+        <![endif]-->
+        
+        <script>
+            //* hide all elements & show preloader
+            document.documentElement.className += 'js';
+        </script>
+        @RenderSection("HeadContent", required:false)
+    </head>
+    <body>
+        <div id="loading_layer" style="display:none"><img src="~/Content/img/ajax_loader.gif" alt="" /></div>
+        <div id="maincontainer" class="clearfix">
+            <!-- header -->
+            <header>
+                <div class="navbar navbar-fixed-top">
+                    <div class="navbar-inner">
+                        <div class="container-fluid">
+                            <a class="brand" href="/Home/Index"><i class="icon-home icon-white"></i> DMS - Dashboard</a>
+                            <ul class="nav user_menu pull-right">
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="~/Content/img/user_avatar.png" alt="" class="user_avatar" /> Johny Smith <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="user_profile.html">My Profile</a></li>
+                                        <li><a href="javascrip:void(0)">Another action</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="login.html">Log Out</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <ul class="nav" id="mobile-nav">
+                                <li class="dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-list-alt icon-white"></i> Forms <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="form_elements.html">Form elements</a></li>
+                                        <li><a href="form_extended.html">Extended form elements</a></li>
+                                        <li><a href="form_validation.html">Form Validation</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-th icon-white"></i> Components <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="alerts_btns.html">Alerts & Buttons</a></li>
+                                        <li><a href="icons.html">Icons</a></li>
+                                        <li><a href="notifications.html">Notifications</a></li>
+                                        <li><a href="tables.html">Tables</a></li>
+                                        <li><a href="tables_more.html">Tables (more examples)</a></li>
+                                        <li><a href="tabs_accordion.html">Tabs & Accordion</a></li>
+                                        <li><a href="tooltips.html">Tooltips, Popovers</a></li>
+                                        <li><a href="typography.html">Typography</a></li>
+                                        <li><a href="widgets.html">Widget boxes</a></li>
+                                        <li class="dropdown">
+                                            <a href="#">Sub menu <b class="caret-right"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Sub menu 1.1</a></li>
+                                                <li><a href="#">Sub menu 1.2</a></li>
+                                                <li><a href="#">Sub menu 1.3</a></li>
+                                                <li>
+                                                    <a href="#">Sub menu 1.4 <b class="caret-right"></b></a>
+                                                    <ul class="dropdown-menu">
+                                                        <li><a href="#">Sub menu 1.4.1</a></li>
+                                                        <li><a href="#">Sub menu 1.4.2</a></li>
+                                                        <li><a href="#">Sub menu 1.4.3</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-wrench icon-white"></i> Plugins <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="charts.html">Charts</a></li>
+                                        <li><a href="calendar.html">Calendar</a></li>
+                                        <li><a href="datatable.html">Datatable</a></li>
+                                        <li><a href="dynamic_tree.html">Dynamic Tree</a></li>
+                                        <li><a href="editable_elements.html">Editable elements</a></li>
+                                        <li><a href="file_manager.html">File Manager</a></li>
+                                        <li><a href="floating_header.html">Floating List Header</a></li>
+                                        <li><a href="google_maps.html">Google Maps</a></li>
+                                        <li><a href="gallery.html">Gallery Grid</a></li>
+                                        <li><a href="wizard.html">Wizard</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-file icon-white"></i> Pages <b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="blog_page.html">Blog Page</a></li>
+                                        <li><a href="chat.html">Chat</a></li>
+                                        <li><a href="error_404.html">Error 404</a></li>
+                                        <li><a href="invoice.html">Invoice</a></li>
+                                        <li><a href="mailbox.html">Mailbox</a></li>
+                                        <li><a href="search_page.html">Search page</a></li>
+                                        <li><a href="user_profile.html">User profile</a></li>
+                                        <li><a href="user_static.html">User profile (static)</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="documentation.html"><i class="icon-book icon-white"></i> Help</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>                
+            </header>
+            
+            <!-- main content -->
+            <div id="contentwrapper">
+                <div class="main_content">
+                    @RenderBody()                        
+                </div>
+            </div>
+            
+            
+            <script src="@Url.Content("~/Content/js/jquery.min.js")"></script>
+            <script src="@Url.Content("~/Content/js/jquery-migrate.min.js")"></script>
+            <!-- smart resize event -->
+            <script src="@Url.Content("~/Content/js/jquery.debouncedresize.min.js")"></script>
+            <!-- hidden elements width/height -->
+            <script src="@Url.Content("~/Content/js/jquery.actual.min.js")"></script>
+            <!-- js cookie plugin -->
+            <script src="@Url.Content("~/Content/js/jquery_cookie.min.js")"></script>
+            <!-- main bootstrap js -->
+            <script src="@Url.Content("~/Content/bootstrap/js/bootstrap.min.js")"></script>
+            <!-- bootstrap plugins -->
+            <script src="@Url.Content("~/Content/js/bootstrap.plugins.min.js")"></script>
+            <!-- tooltips -->
+            <script src="@Url.Content("~/Content/lib/qtip2/jquery.qtip.min.js")"></script>
+            <!-- jBreadcrumbs -->
+            <script src="@Url.Content("~/Content/lib/jBreadcrumbs/js/jquery.jBreadCrumb.1.1.min.js")"></script>
+            <!-- lightbox -->
+            <script src="@Url.Content("~/Content/lib/colorbox/jquery.colorbox.min.js")"></script>
+            <!-- fix for ios orientation change -->
+            <script src="@Url.Content("~/Content/js/ios-orientationchange-fix.js")"></script>
+            <!-- scrollbar -->
+            <script src="@Url.Content("~/Content/lib/antiscroll/antiscroll.js")"></script>
+            <script src="@Url.Content("~/Content/lib/antiscroll/jquery-mousewheel.js")"></script>
+            <!-- to top -->
+            <script src="@Url.Content("~/Content/lib/UItoTop/jquery.ui.totop.min.js")"></script>
+            <!-- mobile nav -->
+            <script src="@Url.Content("~/Content/js/selectNav.js")"></script>
+            <!-- common functions -->
+            <script src="@Url.Content("~/Content/js/gebo_common.js")"></script>
+            
+            <script src="@Url.Content("~/Content/lib/jquery-ui/jquery-ui-1.10.0.custom.min.js")"></script>
+            <!-- touch events for jquery ui-->
+            <script src="@Url.Content("~/Content/js/forms/jquery.ui.touch-punch.min.js")"></script>
+            <!-- multi-column layout -->
+            <script src="@Url.Content("~/Content/js/jquery.imagesloaded.min.js")"></script>
+            <script src="@Url.Content("~/Content/js/jquery.wookmark.js")"></script>
+            <!-- responsive table -->
+            <script src="@Url.Content("~/Content/js/jquery.mediaTable.min.js")"></script>
+            <!-- small charts -->
+            <script src="@Url.Content("~/Content/js/jquery.peity.min.js")"></script>
+            <!-- charts -->
+            <script src="@Url.Content("~/Content/lib/flot/jquery.flot.min.js")"></script>
+            <script src="@Url.Content("~/Content/lib/flot/jquery.flot.resize.min.js")"></script>
+            <script src="@Url.Content("~/Content/lib/flot/jquery.flot.pie.min.js")"></script>
+            <!-- calendar -->
+            <script src="@Url.Content("~/Content/lib/fullcalendar/fullcalendar.min.js")"></script>
+            <!-- sortable/filterable list -->
+            <script src="@Url.Content("~/Content/lib/list_js/list.min.js")"></script>
+            <script src="@Url.Content("~/Content/lib/list_js/plugins/paging/list.paging.js")"></script>
+            <!-- dashboard functions -->
+  @*          <script src="@Url.Content("~/Content/js/gebo_dashboard.js")"></script>*@
+    
+            <script>
+                $(document).ready(function () {
+                    //* show all elements & remove preloader
+                    setTimeout('$("html").removeClass("js")', 1000);
+                });
+            </script>
+        
+        </div>
+    </body>
+</html>
