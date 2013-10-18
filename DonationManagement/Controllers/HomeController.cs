@@ -16,14 +16,14 @@ namespace DonationManagement.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Title = "About DMS";
+            ViewBag.Message = "Donation Management System - Tracking donations for your organization.";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Title = "DMS Contact Page";
+            ViewBag.Message = "Please Contact us at help@DMS.org for detailed information.";
 
             return View();
         }

@@ -60,7 +60,7 @@
                             <a class="brand" href="/Home/Index"><i class="icon-home icon-white"></i> DMS - Dashboard</a>
                             <ul class="nav user_menu pull-right">
                                 <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="~/Content/img/user_avatar.png" alt="" class="user_avatar" /> Johny Smith <b class="caret"></b></a>
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="~/Content/img/user_avatar.png" alt="" class="user_avatar" /> Guest <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="user_profile.html">My Profile</a></li>
                                         <li><a href="javascrip:void(0)">Another action</a></li>
@@ -71,7 +71,7 @@
                             </ul>
                             <ul class="nav" id="mobile-nav">
                                 <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-list-alt icon-white"></i> Forms <b class="caret"></b></a>
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-list-alt icon-white"></i> Donations <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="form_elements.html">Form elements</a></li>
                                         <li><a href="form_extended.html">Extended form elements</a></li>
@@ -79,7 +79,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-th icon-white"></i> Components <b class="caret"></b></a>
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-th icon-white"></i> Members <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="alerts_btns.html">Alerts & Buttons</a></li>
                                         <li><a href="icons.html">Icons</a></li>
@@ -109,7 +109,7 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-wrench icon-white"></i> Plugins <b class="caret"></b></a>
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-wrench icon-white"></i> Reports <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="charts.html">Charts</a></li>
                                         <li><a href="calendar.html">Calendar</a></li>
@@ -124,20 +124,13 @@
                                     </ul>
                                 </li>
                                 <li class="dropdown">
-                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-file icon-white"></i> Pages <b class="caret"></b></a>
+                                    <a data-toggle="dropdown" class="dropdown-toggle" href="#"><i class="icon-file icon-white"></i> Admin <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a href="blog_page.html">Blog Page</a></li>
-                                        <li><a href="chat.html">Chat</a></li>
-                                        <li><a href="error_404.html">Error 404</a></li>
-                                        <li><a href="invoice.html">Invoice</a></li>
-                                        <li><a href="mailbox.html">Mailbox</a></li>
-                                        <li><a href="search_page.html">Search page</a></li>
-                                        <li><a href="user_profile.html">User profile</a></li>
-                                        <li><a href="user_static.html">User profile (static)</a></li>
+                                        <li>@Html.ActionLink("About", "About")</li>
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="documentation.html"><i class="icon-book icon-white"></i> Help</a>
+                                    @Html.ActionLink("Help", "Contact")
                                 </li>
                             </ul>
                         </div>
