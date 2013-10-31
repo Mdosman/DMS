@@ -1,0 +1,2382 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DonationManagementModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="DonationManagementModelStoreContainer">
+          <EntitySet Name="tblAddresses" EntityType="DonationManagementModel.Store.tblAddresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblAddressTypes" EntityType="DonationManagementModel.Store.tblAddressTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblBatches" EntityType="DonationManagementModel.Store.tblBatches" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblContactInfos" EntityType="DonationManagementModel.Store.tblContactInfos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblContactInfoTypes" EntityType="DonationManagementModel.Store.tblContactInfoTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblContributionCategories" EntityType="DonationManagementModel.Store.tblContributionCategories" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblContributions" EntityType="DonationManagementModel.Store.tblContributions" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblCountries" EntityType="DonationManagementModel.Store.tblCountries" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDonorAdresses" EntityType="DonationManagementModel.Store.tblDonorAdresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDonorContactInfos" EntityType="DonationManagementModel.Store.tblDonorContactInfos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDonorGroups" EntityType="DonationManagementModel.Store.tblDonorGroups" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDonorGroupTypes" EntityType="DonationManagementModel.Store.tblDonorGroupTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDonors" EntityType="DonationManagementModel.Store.tblDonors" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDonorStatuses" EntityType="DonationManagementModel.Store.tblDonorStatuses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblDonorTypes" EntityType="DonationManagementModel.Store.tblDonorTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblGenders" EntityType="DonationManagementModel.Store.tblGenders" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblHouseholdMembers" EntityType="DonationManagementModel.Store.tblHouseholdMembers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblHouseholds" EntityType="DonationManagementModel.Store.tblHouseholds" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblMaritalStatuses" EntityType="DonationManagementModel.Store.tblMaritalStatuses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblOrganizationAddresses" EntityType="DonationManagementModel.Store.tblOrganizationAddresses" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblOrganizationContactInfos" EntityType="DonationManagementModel.Store.tblOrganizationContactInfos" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblOrganizations" EntityType="DonationManagementModel.Store.tblOrganizations" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPaymentTypes" EntityType="DonationManagementModel.Store.tblPaymentTypes" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPledgeCampaigns" EntityType="DonationManagementModel.Store.tblPledgeCampaigns" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblPledges" EntityType="DonationManagementModel.Store.tblPledges" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tblStateProvinces" EntityType="DonationManagementModel.Store.tblStateProvinces" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Addresses_StateProvinces" Association="DonationManagementModel.Store.FK_Addresses_StateProvinces">
+            <End Role="tblStateProvinces" EntitySet="tblStateProvinces" />
+            <End Role="tblAddresses" EntitySet="tblAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Batches_Organizations" Association="DonationManagementModel.Store.FK_Batches_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblBatches" EntitySet="tblBatches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContributionCategories_Organizations" Association="DonationManagementModel.Store.FK_ContributionCategories_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblContributionCategories" EntitySet="tblContributionCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contributions_Batches" Association="DonationManagementModel.Store.FK_Contributions_Batches">
+            <End Role="tblBatches" EntitySet="tblBatches" />
+            <End Role="tblContributions" EntitySet="tblContributions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contributions_ContributionCategories" Association="DonationManagementModel.Store.FK_Contributions_ContributionCategories">
+            <End Role="tblContributionCategories" EntitySet="tblContributionCategories" />
+            <End Role="tblContributions" EntitySet="tblContributions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contributions_Donors" Association="DonationManagementModel.Store.FK_Contributions_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblContributions" EntitySet="tblContributions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contributions_PaymentTypes" Association="DonationManagementModel.Store.FK_Contributions_PaymentTypes">
+            <End Role="tblPaymentTypes" EntitySet="tblPaymentTypes" />
+            <End Role="tblContributions" EntitySet="tblContributions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorAdresses_Addresses" Association="DonationManagementModel.Store.FK_DonorAdresses_Addresses">
+            <End Role="tblAddresses" EntitySet="tblAddresses" />
+            <End Role="tblDonorAdresses" EntitySet="tblDonorAdresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorAdresses_AddressTypes" Association="DonationManagementModel.Store.FK_DonorAdresses_AddressTypes">
+            <End Role="tblAddressTypes" EntitySet="tblAddressTypes" />
+            <End Role="tblDonorAdresses" EntitySet="tblDonorAdresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorAdresses_Donors" Association="DonationManagementModel.Store.FK_DonorAdresses_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblDonorAdresses" EntitySet="tblDonorAdresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorContactInfos_ContactInfos" Association="DonationManagementModel.Store.FK_DonorContactInfos_ContactInfos">
+            <End Role="tblContactInfos" EntitySet="tblContactInfos" />
+            <End Role="tblDonorContactInfos" EntitySet="tblDonorContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorContactInfos_ContactInfoTypes" Association="DonationManagementModel.Store.FK_DonorContactInfos_ContactInfoTypes">
+            <End Role="tblContactInfoTypes" EntitySet="tblContactInfoTypes" />
+            <End Role="tblDonorContactInfos" EntitySet="tblDonorContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorContactInfos_Donors" Association="DonationManagementModel.Store.FK_DonorContactInfos_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblDonorContactInfos" EntitySet="tblDonorContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorGroups_DonorGroupTypes" Association="DonationManagementModel.Store.FK_DonorGroups_DonorGroupTypes">
+            <End Role="tblDonorGroupTypes" EntitySet="tblDonorGroupTypes" />
+            <End Role="tblDonorGroups" EntitySet="tblDonorGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorGroups_Donors" Association="DonationManagementModel.Store.FK_DonorGroups_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblDonorGroups" EntitySet="tblDonorGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donors_DonorStatus" Association="DonationManagementModel.Store.FK_Donors_DonorStatus">
+            <End Role="tblDonorStatuses" EntitySet="tblDonorStatuses" />
+            <End Role="tblDonors" EntitySet="tblDonors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donors_DonorTypes" Association="DonationManagementModel.Store.FK_Donors_DonorTypes">
+            <End Role="tblDonorTypes" EntitySet="tblDonorTypes" />
+            <End Role="tblDonors" EntitySet="tblDonors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donors_MaritalStatuses" Association="DonationManagementModel.Store.FK_Donors_MaritalStatuses">
+            <End Role="tblMaritalStatuses" EntitySet="tblMaritalStatuses" />
+            <End Role="tblDonors" EntitySet="tblDonors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donors_Organizations" Association="DonationManagementModel.Store.FK_Donors_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblDonors" EntitySet="tblDonors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HouseholdMembers_Donors" Association="DonationManagementModel.Store.FK_HouseholdMembers_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblHouseholdMembers" EntitySet="tblHouseholdMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HouseholdMembers_Households" Association="DonationManagementModel.Store.FK_HouseholdMembers_Households">
+            <End Role="tblHouseholds" EntitySet="tblHouseholds" />
+            <End Role="tblHouseholdMembers" EntitySet="tblHouseholdMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Households_Addresses" Association="DonationManagementModel.Store.FK_Households_Addresses">
+            <End Role="tblAddresses" EntitySet="tblAddresses" />
+            <End Role="tblHouseholds" EntitySet="tblHouseholds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Households_Organizations" Association="DonationManagementModel.Store.FK_Households_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblHouseholds" EntitySet="tblHouseholds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationAddresses_Addresses" Association="DonationManagementModel.Store.FK_OrganizationAddresses_Addresses">
+            <End Role="tblAddresses" EntitySet="tblAddresses" />
+            <End Role="tblOrganizationAddresses" EntitySet="tblOrganizationAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationAddresses_AddressTypes" Association="DonationManagementModel.Store.FK_OrganizationAddresses_AddressTypes">
+            <End Role="tblAddressTypes" EntitySet="tblAddressTypes" />
+            <End Role="tblOrganizationAddresses" EntitySet="tblOrganizationAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationAddresses_Organizations" Association="DonationManagementModel.Store.FK_OrganizationAddresses_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblOrganizationAddresses" EntitySet="tblOrganizationAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationContactInfos_ContactInfos" Association="DonationManagementModel.Store.FK_OrganizationContactInfos_ContactInfos">
+            <End Role="tblContactInfos" EntitySet="tblContactInfos" />
+            <End Role="tblOrganizationContactInfos" EntitySet="tblOrganizationContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationContactInfos_ContactInfoTypes" Association="DonationManagementModel.Store.FK_OrganizationContactInfos_ContactInfoTypes">
+            <End Role="tblContactInfoTypes" EntitySet="tblContactInfoTypes" />
+            <End Role="tblOrganizationContactInfos" EntitySet="tblOrganizationContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationContactInfos_Organizations" Association="DonationManagementModel.Store.FK_OrganizationContactInfos_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblOrganizationContactInfos" EntitySet="tblOrganizationContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pledges_Donors" Association="DonationManagementModel.Store.FK_Pledges_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblPledges" EntitySet="tblPledges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pledges_PledgeCampaigns" Association="DonationManagementModel.Store.FK_Pledges_PledgeCampaigns">
+            <End Role="tblPledgeCampaigns" EntitySet="tblPledgeCampaigns" />
+            <End Role="tblPledges" EntitySet="tblPledges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StateProvinces_Countries" Association="DonationManagementModel.Store.FK_StateProvinces_Countries">
+            <End Role="tblCountries" EntitySet="tblCountries" />
+            <End Role="tblStateProvinces" EntitySet="tblStateProvinces" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDonors_tblGenders" Association="DonationManagementModel.Store.FK_tblDonors_tblGenders">
+            <End Role="tblGenders" EntitySet="tblGenders" />
+            <End Role="tblDonors" EntitySet="tblDonors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPledgeCampaigns_tblContributionCategories" Association="DonationManagementModel.Store.FK_tblPledgeCampaigns_tblContributionCategories">
+            <End Role="tblContributionCategories" EntitySet="tblContributionCategories" />
+            <End Role="tblPledgeCampaigns" EntitySet="tblPledgeCampaigns" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblAddresses">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AddressLine1" Type="nvarchar" MaxLength="50" />
+          <Property Name="AddressLine2" Type="nvarchar" MaxLength="50" />
+          <Property Name="City" Type="nvarchar" MaxLength="50" />
+          <Property Name="StateProvinceId" Type="int" />
+          <Property Name="PostalCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblAddressTypes">
+          <Key>
+            <PropertyRef Name="AddressTypeId" />
+          </Key>
+          <Property Name="AddressTypeId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AddressType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblBatches">
+          <Key>
+            <PropertyRef Name="BatchId" />
+          </Key>
+          <Property Name="BatchId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BatchName" Type="nvarchar" MaxLength="150" />
+          <Property Name="OrganizationId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblContactInfos">
+          <Key>
+            <PropertyRef Name="ContactInfoId" />
+          </Key>
+          <Property Name="ContactInfoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="nvarchar" MaxLength="250" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="WirelessPhone" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblContactInfoTypes">
+          <Key>
+            <PropertyRef Name="ContactInfoTypeId" />
+          </Key>
+          <Property Name="ContactInfoTypeId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContactInfoType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblContributionCategories">
+          <Key>
+            <PropertyRef Name="ContributionCategoryId" />
+          </Key>
+          <Property Name="ContributionCategoryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContributionCategory" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="OrganizationId" Type="int" Nullable="false" />
+          <Property Name="IsDefault" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblContributions">
+          <Key>
+            <PropertyRef Name="ContributionId" />
+          </Key>
+          <Property Name="ContributionId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BatchId" Type="int" />
+          <Property Name="DonorId" Type="int" />
+          <Property Name="ContributionCategoryId" Type="int" Nullable="false" />
+          <Property Name="ContributionDate" Type="datetime" Nullable="false" />
+          <Property Name="PaymentTypeId" Type="smallint" Nullable="false" />
+          <Property Name="Contribution" Type="money" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="500" />
+          <Property Name="Custom1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Custom2" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblCountries">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Country" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ISO2" Type="nchar" MaxLength="10" />
+          <Property Name="ISO3" Type="nchar" MaxLength="10" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblDonorAdresses">
+          <Key>
+            <PropertyRef Name="DonorAddressId" />
+          </Key>
+          <Property Name="DonorAddressId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DonorId" Type="int" Nullable="false" />
+          <Property Name="AddressId" Type="int" Nullable="false" />
+          <Property Name="AddressTypeId" Type="smallint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblDonorContactInfos">
+          <Key>
+            <PropertyRef Name="DonorContactInfoId" />
+          </Key>
+          <Property Name="DonorContactInfoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DonorId" Type="int" Nullable="false" />
+          <Property Name="ContactInfoId" Type="int" Nullable="false" />
+          <Property Name="ContactInfoTypeId" Type="smallint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblDonorGroups">
+          <Key>
+            <PropertyRef Name="DonorGroupId" />
+          </Key>
+          <Property Name="DonorGroupId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DonorId" Type="int" Nullable="false" />
+          <Property Name="DonorGroupTypeId" Type="smallint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblDonorGroupTypes">
+          <Key>
+            <PropertyRef Name="DonorGroupTypeId" />
+          </Key>
+          <Property Name="DonorGroupTypeId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DonorGroupType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblDonors">
+          <Key>
+            <PropertyRef Name="DonorId" />
+          </Key>
+          <Property Name="DonorId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="FirstName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="MiddleName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="GenderId" Type="tinyint" />
+          <Property Name="MaritalStatusId" Type="tinyint" />
+          <Property Name="Note" Type="varchar" MaxLength="500" />
+          <Property Name="DonorTypeId" Type="tinyint" Nullable="false" />
+          <Property Name="DonorStatusId" Type="tinyint" Nullable="false" />
+          <Property Name="OrganizationId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblDonorStatuses">
+          <Key>
+            <PropertyRef Name="DonorStatusId" />
+          </Key>
+          <Property Name="DonorStatusId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DonorStatus" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblDonorTypes">
+          <Key>
+            <PropertyRef Name="DonorTypeId" />
+          </Key>
+          <Property Name="DonorTypeId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DonorType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblGenders">
+          <Key>
+            <PropertyRef Name="GenderId" />
+          </Key>
+          <Property Name="GenderId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Gender" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblHouseholdMembers">
+          <Key>
+            <PropertyRef Name="HouseholdMemberId" />
+          </Key>
+          <Property Name="HouseholdMemberId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HouseholdId" Type="int" Nullable="false" />
+          <Property Name="DonorId" Type="int" Nullable="false" />
+          <Property Name="IsHouseholdHead" Type="bit" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblHouseholds">
+          <Key>
+            <PropertyRef Name="HouseholdId" />
+          </Key>
+          <Property Name="HouseholdId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="HouseholdName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="HouseholdPhone" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="AddressId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="OrganizationId" Type="int" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblMaritalStatuses">
+          <Key>
+            <PropertyRef Name="MaritalStatusId" />
+          </Key>
+          <Property Name="MaritalStatusId" Type="tinyint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MaritalStatus" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblOrganizationAddresses">
+          <Key>
+            <PropertyRef Name="OrganizationAddressId" />
+          </Key>
+          <Property Name="OrganizationAddressId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationId" Type="int" Nullable="false" />
+          <Property Name="AddressId" Type="int" Nullable="false" />
+          <Property Name="AddressTypeId" Type="smallint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblOrganizationContactInfos">
+          <Key>
+            <PropertyRef Name="OrganizationContactInfoId" />
+          </Key>
+          <Property Name="OrganizationContactInfoId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationId" Type="int" Nullable="false" />
+          <Property Name="ContactInfoId" Type="int" Nullable="false" />
+          <Property Name="ContactInfoTypeId" Type="smallint" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblOrganizations">
+          <Key>
+            <PropertyRef Name="OrganizationId" />
+          </Key>
+          <Property Name="OrganizationId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationName" Type="nvarchar" Nullable="false" MaxLength="250" />
+          <Property Name="Abbreviation" Type="nvarchar" MaxLength="50" />
+          <Property Name="FederalTaxId" Type="nvarchar" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblPaymentTypes">
+          <Key>
+            <PropertyRef Name="PaymentTypeId" />
+          </Key>
+          <Property Name="PaymentTypeId" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentType" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblPledgeCampaigns">
+          <Key>
+            <PropertyRef Name="PledgeCampaignId" />
+          </Key>
+          <Property Name="PledgeCampaignId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PledgeCampaignName" Type="nvarchar" Nullable="false" MaxLength="150" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="ContributionCategoryId" Type="int" Nullable="false" />
+          <Property Name="TargetAmount" Type="money" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="HasCompleted" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblPledges">
+          <Key>
+            <PropertyRef Name="PledgeId" />
+          </Key>
+          <Property Name="PledgeId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PledgeCampaignId" Type="int" Nullable="false" />
+          <Property Name="DonorId" Type="int" Nullable="false" />
+          <Property Name="PledgeAmount" Type="money" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <EntityType Name="tblStateProvinces">
+          <Key>
+            <PropertyRef Name="StateProvinceId" />
+          </Key>
+          <Property Name="StateProvinceId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StateProvinceName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="StateProvicenCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountryId" Type="int" Nullable="false" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="CreatedOn" Type="datetime" Nullable="false" />
+          <Property Name="CreatedBy" Type="int" Nullable="false" />
+          <Property Name="UpdatedOn" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedBy" Type="int" Nullable="false" />
+          <Property Name="Version" Type="timestamp" Nullable="false" StoreGeneratedPattern="Computed" />
+        </EntityType>
+        <Association Name="FK_Addresses_StateProvinces">
+          <End Role="tblStateProvinces" Type="DonationManagementModel.Store.tblStateProvinces" Multiplicity="0..1" />
+          <End Role="tblAddresses" Type="DonationManagementModel.Store.tblAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblStateProvinces">
+              <PropertyRef Name="StateProvinceId" />
+            </Principal>
+            <Dependent Role="tblAddresses">
+              <PropertyRef Name="StateProvinceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Batches_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.Store.tblOrganizations" Multiplicity="1" />
+          <End Role="tblBatches" Type="DonationManagementModel.Store.tblBatches" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="tblBatches">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContributionCategories_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.Store.tblOrganizations" Multiplicity="1" />
+          <End Role="tblContributionCategories" Type="DonationManagementModel.Store.tblContributionCategories" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="tblContributionCategories">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contributions_Batches">
+          <End Role="tblBatches" Type="DonationManagementModel.Store.tblBatches" Multiplicity="0..1" />
+          <End Role="tblContributions" Type="DonationManagementModel.Store.tblContributions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblBatches">
+              <PropertyRef Name="BatchId" />
+            </Principal>
+            <Dependent Role="tblContributions">
+              <PropertyRef Name="BatchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contributions_ContributionCategories">
+          <End Role="tblContributionCategories" Type="DonationManagementModel.Store.tblContributionCategories" Multiplicity="1" />
+          <End Role="tblContributions" Type="DonationManagementModel.Store.tblContributions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContributionCategories">
+              <PropertyRef Name="ContributionCategoryId" />
+            </Principal>
+            <Dependent Role="tblContributions">
+              <PropertyRef Name="ContributionCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contributions_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="0..1" />
+          <End Role="tblContributions" Type="DonationManagementModel.Store.tblContributions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDonors">
+              <PropertyRef Name="DonorId" />
+            </Principal>
+            <Dependent Role="tblContributions">
+              <PropertyRef Name="DonorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contributions_PaymentTypes">
+          <End Role="tblPaymentTypes" Type="DonationManagementModel.Store.tblPaymentTypes" Multiplicity="1" />
+          <End Role="tblContributions" Type="DonationManagementModel.Store.tblContributions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPaymentTypes">
+              <PropertyRef Name="PaymentTypeId" />
+            </Principal>
+            <Dependent Role="tblContributions">
+              <PropertyRef Name="PaymentTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonorAdresses_Addresses">
+          <End Role="tblAddresses" Type="DonationManagementModel.Store.tblAddresses" Multiplicity="1" />
+          <End Role="tblDonorAdresses" Type="DonationManagementModel.Store.tblDonorAdresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddresses">
+              <PropertyRef Name="AddressId" />
+            </Principal>
+            <Dependent Role="tblDonorAdresses">
+              <PropertyRef Name="AddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonorAdresses_AddressTypes">
+          <End Role="tblAddressTypes" Type="DonationManagementModel.Store.tblAddressTypes" Multiplicity="1" />
+          <End Role="tblDonorAdresses" Type="DonationManagementModel.Store.tblDonorAdresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddressTypes">
+              <PropertyRef Name="AddressTypeId" />
+            </Principal>
+            <Dependent Role="tblDonorAdresses">
+              <PropertyRef Name="AddressTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonorAdresses_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="1" />
+          <End Role="tblDonorAdresses" Type="DonationManagementModel.Store.tblDonorAdresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDonors">
+              <PropertyRef Name="DonorId" />
+            </Principal>
+            <Dependent Role="tblDonorAdresses">
+              <PropertyRef Name="DonorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonorContactInfos_ContactInfos">
+          <End Role="tblContactInfos" Type="DonationManagementModel.Store.tblContactInfos" Multiplicity="1" />
+          <End Role="tblDonorContactInfos" Type="DonationManagementModel.Store.tblDonorContactInfos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContactInfos">
+              <PropertyRef Name="ContactInfoId" />
+            </Principal>
+            <Dependent Role="tblDonorContactInfos">
+              <PropertyRef Name="ContactInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonorContactInfos_ContactInfoTypes">
+          <End Role="tblContactInfoTypes" Type="DonationManagementModel.Store.tblContactInfoTypes" Multiplicity="1" />
+          <End Role="tblDonorContactInfos" Type="DonationManagementModel.Store.tblDonorContactInfos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContactInfoTypes">
+              <PropertyRef Name="ContactInfoTypeId" />
+            </Principal>
+            <Dependent Role="tblDonorContactInfos">
+              <PropertyRef Name="ContactInfoTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonorContactInfos_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="1" />
+          <End Role="tblDonorContactInfos" Type="DonationManagementModel.Store.tblDonorContactInfos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDonors">
+              <PropertyRef Name="DonorId" />
+            </Principal>
+            <Dependent Role="tblDonorContactInfos">
+              <PropertyRef Name="DonorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonorGroups_DonorGroupTypes">
+          <End Role="tblDonorGroupTypes" Type="DonationManagementModel.Store.tblDonorGroupTypes" Multiplicity="1" />
+          <End Role="tblDonorGroups" Type="DonationManagementModel.Store.tblDonorGroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDonorGroupTypes">
+              <PropertyRef Name="DonorGroupTypeId" />
+            </Principal>
+            <Dependent Role="tblDonorGroups">
+              <PropertyRef Name="DonorGroupTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_DonorGroups_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="1" />
+          <End Role="tblDonorGroups" Type="DonationManagementModel.Store.tblDonorGroups" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDonors">
+              <PropertyRef Name="DonorId" />
+            </Principal>
+            <Dependent Role="tblDonorGroups">
+              <PropertyRef Name="DonorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donors_DonorStatus">
+          <End Role="tblDonorStatuses" Type="DonationManagementModel.Store.tblDonorStatuses" Multiplicity="1" />
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDonorStatuses">
+              <PropertyRef Name="DonorStatusId" />
+            </Principal>
+            <Dependent Role="tblDonors">
+              <PropertyRef Name="DonorStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donors_DonorTypes">
+          <End Role="tblDonorTypes" Type="DonationManagementModel.Store.tblDonorTypes" Multiplicity="1" />
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDonorTypes">
+              <PropertyRef Name="DonorTypeId" />
+            </Principal>
+            <Dependent Role="tblDonors">
+              <PropertyRef Name="DonorTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donors_MaritalStatuses">
+          <End Role="tblMaritalStatuses" Type="DonationManagementModel.Store.tblMaritalStatuses" Multiplicity="0..1" />
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblMaritalStatuses">
+              <PropertyRef Name="MaritalStatusId" />
+            </Principal>
+            <Dependent Role="tblDonors">
+              <PropertyRef Name="MaritalStatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Donors_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.Store.tblOrganizations" Multiplicity="1" />
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="tblDonors">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HouseholdMembers_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="1" />
+          <End Role="tblHouseholdMembers" Type="DonationManagementModel.Store.tblHouseholdMembers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDonors">
+              <PropertyRef Name="DonorId" />
+            </Principal>
+            <Dependent Role="tblHouseholdMembers">
+              <PropertyRef Name="DonorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_HouseholdMembers_Households">
+          <End Role="tblHouseholds" Type="DonationManagementModel.Store.tblHouseholds" Multiplicity="1" />
+          <End Role="tblHouseholdMembers" Type="DonationManagementModel.Store.tblHouseholdMembers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblHouseholds">
+              <PropertyRef Name="HouseholdId" />
+            </Principal>
+            <Dependent Role="tblHouseholdMembers">
+              <PropertyRef Name="HouseholdId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Households_Addresses">
+          <End Role="tblAddresses" Type="DonationManagementModel.Store.tblAddresses" Multiplicity="1" />
+          <End Role="tblHouseholds" Type="DonationManagementModel.Store.tblHouseholds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddresses">
+              <PropertyRef Name="AddressId" />
+            </Principal>
+            <Dependent Role="tblHouseholds">
+              <PropertyRef Name="AddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Households_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.Store.tblOrganizations" Multiplicity="1" />
+          <End Role="tblHouseholds" Type="DonationManagementModel.Store.tblHouseholds" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="tblHouseholds">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationAddresses_Addresses">
+          <End Role="tblAddresses" Type="DonationManagementModel.Store.tblAddresses" Multiplicity="1" />
+          <End Role="tblOrganizationAddresses" Type="DonationManagementModel.Store.tblOrganizationAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddresses">
+              <PropertyRef Name="AddressId" />
+            </Principal>
+            <Dependent Role="tblOrganizationAddresses">
+              <PropertyRef Name="AddressId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationAddresses_AddressTypes">
+          <End Role="tblAddressTypes" Type="DonationManagementModel.Store.tblAddressTypes" Multiplicity="1" />
+          <End Role="tblOrganizationAddresses" Type="DonationManagementModel.Store.tblOrganizationAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblAddressTypes">
+              <PropertyRef Name="AddressTypeId" />
+            </Principal>
+            <Dependent Role="tblOrganizationAddresses">
+              <PropertyRef Name="AddressTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationAddresses_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.Store.tblOrganizations" Multiplicity="1" />
+          <End Role="tblOrganizationAddresses" Type="DonationManagementModel.Store.tblOrganizationAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="tblOrganizationAddresses">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationContactInfos_ContactInfos">
+          <End Role="tblContactInfos" Type="DonationManagementModel.Store.tblContactInfos" Multiplicity="1" />
+          <End Role="tblOrganizationContactInfos" Type="DonationManagementModel.Store.tblOrganizationContactInfos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContactInfos">
+              <PropertyRef Name="ContactInfoId" />
+            </Principal>
+            <Dependent Role="tblOrganizationContactInfos">
+              <PropertyRef Name="ContactInfoId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationContactInfos_ContactInfoTypes">
+          <End Role="tblContactInfoTypes" Type="DonationManagementModel.Store.tblContactInfoTypes" Multiplicity="1" />
+          <End Role="tblOrganizationContactInfos" Type="DonationManagementModel.Store.tblOrganizationContactInfos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContactInfoTypes">
+              <PropertyRef Name="ContactInfoTypeId" />
+            </Principal>
+            <Dependent Role="tblOrganizationContactInfos">
+              <PropertyRef Name="ContactInfoTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OrganizationContactInfos_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.Store.tblOrganizations" Multiplicity="1" />
+          <End Role="tblOrganizationContactInfos" Type="DonationManagementModel.Store.tblOrganizationContactInfos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblOrganizations">
+              <PropertyRef Name="OrganizationId" />
+            </Principal>
+            <Dependent Role="tblOrganizationContactInfos">
+              <PropertyRef Name="OrganizationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pledges_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="1" />
+          <End Role="tblPledges" Type="DonationManagementModel.Store.tblPledges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblDonors">
+              <PropertyRef Name="DonorId" />
+            </Principal>
+            <Dependent Role="tblPledges">
+              <PropertyRef Name="DonorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pledges_PledgeCampaigns">
+          <End Role="tblPledgeCampaigns" Type="DonationManagementModel.Store.tblPledgeCampaigns" Multiplicity="1" />
+          <End Role="tblPledges" Type="DonationManagementModel.Store.tblPledges" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblPledgeCampaigns">
+              <PropertyRef Name="PledgeCampaignId" />
+            </Principal>
+            <Dependent Role="tblPledges">
+              <PropertyRef Name="PledgeCampaignId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_StateProvinces_Countries">
+          <End Role="tblCountries" Type="DonationManagementModel.Store.tblCountries" Multiplicity="1" />
+          <End Role="tblStateProvinces" Type="DonationManagementModel.Store.tblStateProvinces" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblCountries">
+              <PropertyRef Name="CountryId" />
+            </Principal>
+            <Dependent Role="tblStateProvinces">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblDonors_tblGenders">
+          <End Role="tblGenders" Type="DonationManagementModel.Store.tblGenders" Multiplicity="0..1" />
+          <End Role="tblDonors" Type="DonationManagementModel.Store.tblDonors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblGenders">
+              <PropertyRef Name="GenderId" />
+            </Principal>
+            <Dependent Role="tblDonors">
+              <PropertyRef Name="GenderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tblPledgeCampaigns_tblContributionCategories">
+          <End Role="tblContributionCategories" Type="DonationManagementModel.Store.tblContributionCategories" Multiplicity="1" />
+          <End Role="tblPledgeCampaigns" Type="DonationManagementModel.Store.tblPledgeCampaigns" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblContributionCategories">
+              <PropertyRef Name="ContributionCategoryId" />
+            </Principal>
+            <Dependent Role="tblPledgeCampaigns">
+              <PropertyRef Name="ContributionCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DonationManagementModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DonationManagementEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="tblAddresses" EntityType="DonationManagementModel.tblAddress" />
+          <EntitySet Name="tblAddressTypes" EntityType="DonationManagementModel.tblAddressType" />
+          <EntitySet Name="tblBatches" EntityType="DonationManagementModel.tblBatch" />
+          <EntitySet Name="tblContactInfos" EntityType="DonationManagementModel.tblContactInfo" />
+          <EntitySet Name="tblContactInfoTypes" EntityType="DonationManagementModel.tblContactInfoType" />
+          <EntitySet Name="tblContributionCategories" EntityType="DonationManagementModel.tblContributionCategory" />
+          <EntitySet Name="tblContributions" EntityType="DonationManagementModel.tblContribution" />
+          <EntitySet Name="tblCountries" EntityType="DonationManagementModel.tblCountry" />
+          <EntitySet Name="tblDonorAdresses" EntityType="DonationManagementModel.tblDonorAdress" />
+          <EntitySet Name="tblDonorContactInfos" EntityType="DonationManagementModel.tblDonorContactInfo" />
+          <EntitySet Name="tblDonorGroups" EntityType="DonationManagementModel.tblDonorGroup" />
+          <EntitySet Name="tblDonorGroupTypes" EntityType="DonationManagementModel.tblDonorGroupType" />
+          <EntitySet Name="tblDonors" EntityType="DonationManagementModel.tblDonor" />
+          <EntitySet Name="tblDonorTypes" EntityType="DonationManagementModel.tblDonorType" />
+          <EntitySet Name="tblGenders" EntityType="DonationManagementModel.tblGender" />
+          <EntitySet Name="tblHouseholdMembers" EntityType="DonationManagementModel.tblHouseholdMember" />
+          <EntitySet Name="tblHouseholds" EntityType="DonationManagementModel.tblHousehold" />
+          <EntitySet Name="tblMaritalStatuses" EntityType="DonationManagementModel.tblMaritalStatus" />
+          <EntitySet Name="tblOrganizationAddresses" EntityType="DonationManagementModel.tblOrganizationAddress" />
+          <EntitySet Name="tblOrganizationContactInfos" EntityType="DonationManagementModel.tblOrganizationContactInfo" />
+          <EntitySet Name="tblOrganizations" EntityType="DonationManagementModel.tblOrganization" />
+          <EntitySet Name="tblPaymentTypes" EntityType="DonationManagementModel.tblPaymentType" />
+          <EntitySet Name="tblPledgeCampaigns" EntityType="DonationManagementModel.tblPledgeCampaign" />
+          <EntitySet Name="tblPledges" EntityType="DonationManagementModel.tblPledge" />
+          <EntitySet Name="tblStateProvinces" EntityType="DonationManagementModel.tblStateProvince" />
+          <AssociationSet Name="FK_Addresses_StateProvinces" Association="DonationManagementModel.FK_Addresses_StateProvinces">
+            <End Role="tblStateProvinces" EntitySet="tblStateProvinces" />
+            <End Role="tblAddresses" EntitySet="tblAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorAdresses_Addresses" Association="DonationManagementModel.FK_DonorAdresses_Addresses">
+            <End Role="tblAddresses" EntitySet="tblAddresses" />
+            <End Role="tblDonorAdresses" EntitySet="tblDonorAdresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Households_Addresses" Association="DonationManagementModel.FK_Households_Addresses">
+            <End Role="tblAddresses" EntitySet="tblAddresses" />
+            <End Role="tblHouseholds" EntitySet="tblHouseholds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationAddresses_Addresses" Association="DonationManagementModel.FK_OrganizationAddresses_Addresses">
+            <End Role="tblAddresses" EntitySet="tblAddresses" />
+            <End Role="tblOrganizationAddresses" EntitySet="tblOrganizationAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorAdresses_AddressTypes" Association="DonationManagementModel.FK_DonorAdresses_AddressTypes">
+            <End Role="tblAddressTypes" EntitySet="tblAddressTypes" />
+            <End Role="tblDonorAdresses" EntitySet="tblDonorAdresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationAddresses_AddressTypes" Association="DonationManagementModel.FK_OrganizationAddresses_AddressTypes">
+            <End Role="tblAddressTypes" EntitySet="tblAddressTypes" />
+            <End Role="tblOrganizationAddresses" EntitySet="tblOrganizationAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Batches_Organizations" Association="DonationManagementModel.FK_Batches_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblBatches" EntitySet="tblBatches" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contributions_Batches" Association="DonationManagementModel.FK_Contributions_Batches">
+            <End Role="tblBatches" EntitySet="tblBatches" />
+            <End Role="tblContributions" EntitySet="tblContributions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorContactInfos_ContactInfos" Association="DonationManagementModel.FK_DonorContactInfos_ContactInfos">
+            <End Role="tblContactInfos" EntitySet="tblContactInfos" />
+            <End Role="tblDonorContactInfos" EntitySet="tblDonorContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationContactInfos_ContactInfos" Association="DonationManagementModel.FK_OrganizationContactInfos_ContactInfos">
+            <End Role="tblContactInfos" EntitySet="tblContactInfos" />
+            <End Role="tblOrganizationContactInfos" EntitySet="tblOrganizationContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorContactInfos_ContactInfoTypes" Association="DonationManagementModel.FK_DonorContactInfos_ContactInfoTypes">
+            <End Role="tblContactInfoTypes" EntitySet="tblContactInfoTypes" />
+            <End Role="tblDonorContactInfos" EntitySet="tblDonorContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationContactInfos_ContactInfoTypes" Association="DonationManagementModel.FK_OrganizationContactInfos_ContactInfoTypes">
+            <End Role="tblContactInfoTypes" EntitySet="tblContactInfoTypes" />
+            <End Role="tblOrganizationContactInfos" EntitySet="tblOrganizationContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContributionCategories_Organizations" Association="DonationManagementModel.FK_ContributionCategories_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblContributionCategories" EntitySet="tblContributionCategories" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contributions_ContributionCategories" Association="DonationManagementModel.FK_Contributions_ContributionCategories">
+            <End Role="tblContributionCategories" EntitySet="tblContributionCategories" />
+            <End Role="tblContributions" EntitySet="tblContributions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblPledgeCampaigns_tblContributionCategories" Association="DonationManagementModel.FK_tblPledgeCampaigns_tblContributionCategories">
+            <End Role="tblContributionCategories" EntitySet="tblContributionCategories" />
+            <End Role="tblPledgeCampaigns" EntitySet="tblPledgeCampaigns" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contributions_Donors" Association="DonationManagementModel.FK_Contributions_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblContributions" EntitySet="tblContributions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contributions_PaymentTypes" Association="DonationManagementModel.FK_Contributions_PaymentTypes">
+            <End Role="tblPaymentTypes" EntitySet="tblPaymentTypes" />
+            <End Role="tblContributions" EntitySet="tblContributions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StateProvinces_Countries" Association="DonationManagementModel.FK_StateProvinces_Countries">
+            <End Role="tblCountries" EntitySet="tblCountries" />
+            <End Role="tblStateProvinces" EntitySet="tblStateProvinces" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorAdresses_Donors" Association="DonationManagementModel.FK_DonorAdresses_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblDonorAdresses" EntitySet="tblDonorAdresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorContactInfos_Donors" Association="DonationManagementModel.FK_DonorContactInfos_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblDonorContactInfos" EntitySet="tblDonorContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorGroups_DonorGroupTypes" Association="DonationManagementModel.FK_DonorGroups_DonorGroupTypes">
+            <End Role="tblDonorGroupTypes" EntitySet="tblDonorGroupTypes" />
+            <End Role="tblDonorGroups" EntitySet="tblDonorGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_DonorGroups_Donors" Association="DonationManagementModel.FK_DonorGroups_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblDonorGroups" EntitySet="tblDonorGroups" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donors_DonorTypes" Association="DonationManagementModel.FK_Donors_DonorTypes">
+            <End Role="tblDonorTypes" EntitySet="tblDonorTypes" />
+            <End Role="tblDonors" EntitySet="tblDonors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donors_MaritalStatuses" Association="DonationManagementModel.FK_Donors_MaritalStatuses">
+            <End Role="tblMaritalStatuses" EntitySet="tblMaritalStatuses" />
+            <End Role="tblDonors" EntitySet="tblDonors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Donors_Organizations" Association="DonationManagementModel.FK_Donors_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblDonors" EntitySet="tblDonors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HouseholdMembers_Donors" Association="DonationManagementModel.FK_HouseholdMembers_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblHouseholdMembers" EntitySet="tblHouseholdMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pledges_Donors" Association="DonationManagementModel.FK_Pledges_Donors">
+            <End Role="tblDonors" EntitySet="tblDonors" />
+            <End Role="tblPledges" EntitySet="tblPledges" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tblDonors_tblGenders" Association="DonationManagementModel.FK_tblDonors_tblGenders">
+            <End Role="tblGenders" EntitySet="tblGenders" />
+            <End Role="tblDonors" EntitySet="tblDonors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_HouseholdMembers_Households" Association="DonationManagementModel.FK_HouseholdMembers_Households">
+            <End Role="tblHouseholds" EntitySet="tblHouseholds" />
+            <End Role="tblHouseholdMembers" EntitySet="tblHouseholdMembers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Households_Organizations" Association="DonationManagementModel.FK_Households_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblHouseholds" EntitySet="tblHouseholds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationAddresses_Organizations" Association="DonationManagementModel.FK_OrganizationAddresses_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblOrganizationAddresses" EntitySet="tblOrganizationAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OrganizationContactInfos_Organizations" Association="DonationManagementModel.FK_OrganizationContactInfos_Organizations">
+            <End Role="tblOrganizations" EntitySet="tblOrganizations" />
+            <End Role="tblOrganizationContactInfos" EntitySet="tblOrganizationContactInfos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pledges_PledgeCampaigns" Association="DonationManagementModel.FK_Pledges_PledgeCampaigns">
+            <End Role="tblPledgeCampaigns" EntitySet="tblPledgeCampaigns" />
+            <End Role="tblPledges" EntitySet="tblPledges" />
+          </AssociationSet>
+          <EntitySet Name="tblDonorStatuses" EntityType="DonationManagementModel.tblDonorStatus" />
+          <AssociationSet Name="FK_Donors_DonorStatus1" Association="DonationManagementModel.FK_Donors_DonorStatus1">
+            <End Role="tblDonorStatus" EntitySet="tblDonorStatuses" />
+            <End Role="tblDonor" EntitySet="tblDonors" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tblAddress">
+          <Key>
+            <PropertyRef Name="AddressId" />
+          </Key>
+          <Property Name="AddressId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="AddressLine1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="AddressLine2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="City" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PostalCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblStateProvince" Relationship="DonationManagementModel.FK_Addresses_StateProvinces" FromRole="tblAddresses" ToRole="tblStateProvinces" />
+          <NavigationProperty Name="tblDonorAdresses" Relationship="DonationManagementModel.FK_DonorAdresses_Addresses" FromRole="tblAddresses" ToRole="tblDonorAdresses" />
+          <NavigationProperty Name="tblHouseholds" Relationship="DonationManagementModel.FK_Households_Addresses" FromRole="tblAddresses" ToRole="tblHouseholds" />
+          <NavigationProperty Name="tblOrganizationAddresses" Relationship="DonationManagementModel.FK_OrganizationAddresses_Addresses" FromRole="tblAddresses" ToRole="tblOrganizationAddresses" />
+        </EntityType>
+        <EntityType Name="tblAddressType">
+          <Key>
+            <PropertyRef Name="AddressTypeId" />
+          </Key>
+          <Property Name="AddressTypeId" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="AddressType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonorAdresses" Relationship="DonationManagementModel.FK_DonorAdresses_AddressTypes" FromRole="tblAddressTypes" ToRole="tblDonorAdresses" />
+          <NavigationProperty Name="tblOrganizationAddresses" Relationship="DonationManagementModel.FK_OrganizationAddresses_AddressTypes" FromRole="tblAddressTypes" ToRole="tblOrganizationAddresses" />
+        </EntityType>
+        <EntityType Name="tblBatch">
+          <Key>
+            <PropertyRef Name="BatchId" />
+          </Key>
+          <Property Name="BatchId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BatchName" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblOrganization" Relationship="DonationManagementModel.FK_Batches_Organizations" FromRole="tblBatches" ToRole="tblOrganizations" />
+          <NavigationProperty Name="tblContributions" Relationship="DonationManagementModel.FK_Contributions_Batches" FromRole="tblBatches" ToRole="tblContributions" />
+        </EntityType>
+        <EntityType Name="tblContactInfo">
+          <Key>
+            <PropertyRef Name="ContactInfoId" />
+          </Key>
+          <Property Name="ContactInfoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="EmailAddress" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="WirelessPhone" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonorContactInfos" Relationship="DonationManagementModel.FK_DonorContactInfos_ContactInfos" FromRole="tblContactInfos" ToRole="tblDonorContactInfos" />
+          <NavigationProperty Name="tblOrganizationContactInfos" Relationship="DonationManagementModel.FK_OrganizationContactInfos_ContactInfos" FromRole="tblContactInfos" ToRole="tblOrganizationContactInfos" />
+        </EntityType>
+        <EntityType Name="tblContactInfoType">
+          <Key>
+            <PropertyRef Name="ContactInfoTypeId" />
+          </Key>
+          <Property Name="ContactInfoTypeId" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ContactInfoType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonorContactInfos" Relationship="DonationManagementModel.FK_DonorContactInfos_ContactInfoTypes" FromRole="tblContactInfoTypes" ToRole="tblDonorContactInfos" />
+          <NavigationProperty Name="tblOrganizationContactInfos" Relationship="DonationManagementModel.FK_OrganizationContactInfos_ContactInfoTypes" FromRole="tblContactInfoTypes" ToRole="tblOrganizationContactInfos" />
+        </EntityType>
+        <EntityType Name="tblContributionCategory">
+          <Key>
+            <PropertyRef Name="ContributionCategoryId" />
+          </Key>
+          <Property Name="ContributionCategoryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ContributionCategory" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="IsDefault" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblOrganization" Relationship="DonationManagementModel.FK_ContributionCategories_Organizations" FromRole="tblContributionCategories" ToRole="tblOrganizations" />
+          <NavigationProperty Name="tblContributions" Relationship="DonationManagementModel.FK_Contributions_ContributionCategories" FromRole="tblContributionCategories" ToRole="tblContributions" />
+          <NavigationProperty Name="tblPledgeCampaigns" Relationship="DonationManagementModel.FK_tblPledgeCampaigns_tblContributionCategories" FromRole="tblContributionCategories" ToRole="tblPledgeCampaigns" />
+        </EntityType>
+        <EntityType Name="tblContribution">
+          <Key>
+            <PropertyRef Name="ContributionId" />
+          </Key>
+          <Property Name="ContributionId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="ContributionDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Contribution" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Note" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Custom1" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Custom2" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblBatch" Relationship="DonationManagementModel.FK_Contributions_Batches" FromRole="tblContributions" ToRole="tblBatches" />
+          <NavigationProperty Name="tblContributionCategory" Relationship="DonationManagementModel.FK_Contributions_ContributionCategories" FromRole="tblContributions" ToRole="tblContributionCategories" />
+          <NavigationProperty Name="tblDonor" Relationship="DonationManagementModel.FK_Contributions_Donors" FromRole="tblContributions" ToRole="tblDonors" />
+          <NavigationProperty Name="tblPaymentType" Relationship="DonationManagementModel.FK_Contributions_PaymentTypes" FromRole="tblContributions" ToRole="tblPaymentTypes" />
+        </EntityType>
+        <EntityType Name="tblCountry">
+          <Key>
+            <PropertyRef Name="CountryId" />
+          </Key>
+          <Property Name="CountryId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ISO2" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="ISO3" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblStateProvinces" Relationship="DonationManagementModel.FK_StateProvinces_Countries" FromRole="tblCountries" ToRole="tblStateProvinces" />
+        </EntityType>
+        <EntityType Name="tblDonorAdress">
+          <Key>
+            <PropertyRef Name="DonorAddressId" />
+          </Key>
+          <Property Name="DonorAddressId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblAddress" Relationship="DonationManagementModel.FK_DonorAdresses_Addresses" FromRole="tblDonorAdresses" ToRole="tblAddresses" />
+          <NavigationProperty Name="tblAddressType" Relationship="DonationManagementModel.FK_DonorAdresses_AddressTypes" FromRole="tblDonorAdresses" ToRole="tblAddressTypes" />
+          <NavigationProperty Name="tblDonor" Relationship="DonationManagementModel.FK_DonorAdresses_Donors" FromRole="tblDonorAdresses" ToRole="tblDonors" />
+        </EntityType>
+        <EntityType Name="tblDonorContactInfo">
+          <Key>
+            <PropertyRef Name="DonorContactInfoId" />
+          </Key>
+          <Property Name="DonorContactInfoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblContactInfo" Relationship="DonationManagementModel.FK_DonorContactInfos_ContactInfos" FromRole="tblDonorContactInfos" ToRole="tblContactInfos" />
+          <NavigationProperty Name="tblContactInfoType" Relationship="DonationManagementModel.FK_DonorContactInfos_ContactInfoTypes" FromRole="tblDonorContactInfos" ToRole="tblContactInfoTypes" />
+          <NavigationProperty Name="tblDonor" Relationship="DonationManagementModel.FK_DonorContactInfos_Donors" FromRole="tblDonorContactInfos" ToRole="tblDonors" />
+        </EntityType>
+        <EntityType Name="tblDonorGroup">
+          <Key>
+            <PropertyRef Name="DonorGroupId" />
+          </Key>
+          <Property Name="DonorGroupId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonorGroupType" Relationship="DonationManagementModel.FK_DonorGroups_DonorGroupTypes" FromRole="tblDonorGroups" ToRole="tblDonorGroupTypes" />
+          <NavigationProperty Name="tblDonor" Relationship="DonationManagementModel.FK_DonorGroups_Donors" FromRole="tblDonorGroups" ToRole="tblDonors" />
+        </EntityType>
+        <EntityType Name="tblDonorGroupType">
+          <Key>
+            <PropertyRef Name="DonorGroupTypeId" />
+          </Key>
+          <Property Name="DonorGroupTypeId" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DonorGroupType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonorGroups" Relationship="DonationManagementModel.FK_DonorGroups_DonorGroupTypes" FromRole="tblDonorGroupTypes" ToRole="tblDonorGroups" />
+        </EntityType>
+        <EntityType Name="tblDonor">
+          <Key>
+            <PropertyRef Name="DonorId" />
+          </Key>
+          <Property Name="DonorId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Note" Type="String" MaxLength="500" Unicode="false" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblContributions" Relationship="DonationManagementModel.FK_Contributions_Donors" FromRole="tblDonors" ToRole="tblContributions" />
+          <NavigationProperty Name="tblDonorAdresses" Relationship="DonationManagementModel.FK_DonorAdresses_Donors" FromRole="tblDonors" ToRole="tblDonorAdresses" />
+          <NavigationProperty Name="tblDonorContactInfos" Relationship="DonationManagementModel.FK_DonorContactInfos_Donors" FromRole="tblDonors" ToRole="tblDonorContactInfos" />
+          <NavigationProperty Name="tblDonorGroups" Relationship="DonationManagementModel.FK_DonorGroups_Donors" FromRole="tblDonors" ToRole="tblDonorGroups" />
+          <NavigationProperty Name="tblDonorType" Relationship="DonationManagementModel.FK_Donors_DonorTypes" FromRole="tblDonors" ToRole="tblDonorTypes" />
+          <NavigationProperty Name="tblMaritalStatus" Relationship="DonationManagementModel.FK_Donors_MaritalStatuses" FromRole="tblDonors" ToRole="tblMaritalStatuses" />
+          <NavigationProperty Name="tblOrganization" Relationship="DonationManagementModel.FK_Donors_Organizations" FromRole="tblDonors" ToRole="tblOrganizations" />
+          <NavigationProperty Name="tblHouseholdMembers" Relationship="DonationManagementModel.FK_HouseholdMembers_Donors" FromRole="tblDonors" ToRole="tblHouseholdMembers" />
+          <NavigationProperty Name="tblPledges" Relationship="DonationManagementModel.FK_Pledges_Donors" FromRole="tblDonors" ToRole="tblPledges" />
+          <NavigationProperty Name="tblGender" Relationship="DonationManagementModel.FK_tblDonors_tblGenders" FromRole="tblDonors" ToRole="tblGenders" />
+          <NavigationProperty Name="tblDonorStatus" Relationship="DonationManagementModel.FK_Donors_DonorStatus1" FromRole="tblDonor" ToRole="tblDonorStatus" />
+        </EntityType>
+        <EntityType Name="tblDonorType">
+          <Key>
+            <PropertyRef Name="DonorTypeId" />
+          </Key>
+          <Property Name="DonorTypeId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="DonorType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonors" Relationship="DonationManagementModel.FK_Donors_DonorTypes" FromRole="tblDonorTypes" ToRole="tblDonors" />
+        </EntityType>
+        <EntityType Name="tblGender">
+          <Key>
+            <PropertyRef Name="GenderId" />
+          </Key>
+          <Property Name="GenderId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonors" Relationship="DonationManagementModel.FK_tblDonors_tblGenders" FromRole="tblGenders" ToRole="tblDonors" />
+        </EntityType>
+        <EntityType Name="tblHouseholdMember">
+          <Key>
+            <PropertyRef Name="HouseholdMemberId" />
+          </Key>
+          <Property Name="HouseholdMemberId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IsHouseholdHead" Type="Boolean" Nullable="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonor" Relationship="DonationManagementModel.FK_HouseholdMembers_Donors" FromRole="tblHouseholdMembers" ToRole="tblDonors" />
+          <NavigationProperty Name="tblHousehold" Relationship="DonationManagementModel.FK_HouseholdMembers_Households" FromRole="tblHouseholdMembers" ToRole="tblHouseholds" />
+        </EntityType>
+        <EntityType Name="tblHousehold">
+          <Key>
+            <PropertyRef Name="HouseholdId" />
+          </Key>
+          <Property Name="HouseholdId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="HouseholdName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="HouseholdPhone" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblAddress" Relationship="DonationManagementModel.FK_Households_Addresses" FromRole="tblHouseholds" ToRole="tblAddresses" />
+          <NavigationProperty Name="tblHouseholdMembers" Relationship="DonationManagementModel.FK_HouseholdMembers_Households" FromRole="tblHouseholds" ToRole="tblHouseholdMembers" />
+          <NavigationProperty Name="tblOrganization" Relationship="DonationManagementModel.FK_Households_Organizations" FromRole="tblHouseholds" ToRole="tblOrganizations" />
+        </EntityType>
+        <EntityType Name="tblMaritalStatus">
+          <Key>
+            <PropertyRef Name="MaritalStatusId" />
+          </Key>
+          <Property Name="MaritalStatusId" Type="Byte" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MaritalStatus" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonors" Relationship="DonationManagementModel.FK_Donors_MaritalStatuses" FromRole="tblMaritalStatuses" ToRole="tblDonors" />
+        </EntityType>
+        <EntityType Name="tblOrganizationAddress">
+          <Key>
+            <PropertyRef Name="OrganizationAddressId" />
+          </Key>
+          <Property Name="OrganizationAddressId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblAddress" Relationship="DonationManagementModel.FK_OrganizationAddresses_Addresses" FromRole="tblOrganizationAddresses" ToRole="tblAddresses" />
+          <NavigationProperty Name="tblAddressType" Relationship="DonationManagementModel.FK_OrganizationAddresses_AddressTypes" FromRole="tblOrganizationAddresses" ToRole="tblAddressTypes" />
+          <NavigationProperty Name="tblOrganization" Relationship="DonationManagementModel.FK_OrganizationAddresses_Organizations" FromRole="tblOrganizationAddresses" ToRole="tblOrganizations" />
+        </EntityType>
+        <EntityType Name="tblOrganizationContactInfo">
+          <Key>
+            <PropertyRef Name="OrganizationContactInfoId" />
+          </Key>
+          <Property Name="OrganizationContactInfoId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblContactInfo" Relationship="DonationManagementModel.FK_OrganizationContactInfos_ContactInfos" FromRole="tblOrganizationContactInfos" ToRole="tblContactInfos" />
+          <NavigationProperty Name="tblContactInfoType" Relationship="DonationManagementModel.FK_OrganizationContactInfos_ContactInfoTypes" FromRole="tblOrganizationContactInfos" ToRole="tblContactInfoTypes" />
+          <NavigationProperty Name="tblOrganization" Relationship="DonationManagementModel.FK_OrganizationContactInfos_Organizations" FromRole="tblOrganizationContactInfos" ToRole="tblOrganizations" />
+        </EntityType>
+        <EntityType Name="tblOrganization">
+          <Key>
+            <PropertyRef Name="OrganizationId" />
+          </Key>
+          <Property Name="OrganizationId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="OrganizationName" Type="String" Nullable="false" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Abbreviation" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FederalTaxId" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblBatches" Relationship="DonationManagementModel.FK_Batches_Organizations" FromRole="tblOrganizations" ToRole="tblBatches" />
+          <NavigationProperty Name="tblContributionCategories" Relationship="DonationManagementModel.FK_ContributionCategories_Organizations" FromRole="tblOrganizations" ToRole="tblContributionCategories" />
+          <NavigationProperty Name="tblDonors" Relationship="DonationManagementModel.FK_Donors_Organizations" FromRole="tblOrganizations" ToRole="tblDonors" />
+          <NavigationProperty Name="tblHouseholds" Relationship="DonationManagementModel.FK_Households_Organizations" FromRole="tblOrganizations" ToRole="tblHouseholds" />
+          <NavigationProperty Name="tblOrganizationAddresses" Relationship="DonationManagementModel.FK_OrganizationAddresses_Organizations" FromRole="tblOrganizations" ToRole="tblOrganizationAddresses" />
+          <NavigationProperty Name="tblOrganizationContactInfos" Relationship="DonationManagementModel.FK_OrganizationContactInfos_Organizations" FromRole="tblOrganizations" ToRole="tblOrganizationContactInfos" />
+        </EntityType>
+        <EntityType Name="tblPaymentType">
+          <Key>
+            <PropertyRef Name="PaymentTypeId" />
+          </Key>
+          <Property Name="PaymentTypeId" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentType" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblContributions" Relationship="DonationManagementModel.FK_Contributions_PaymentTypes" FromRole="tblPaymentTypes" ToRole="tblContributions" />
+        </EntityType>
+        <EntityType Name="tblPledgeCampaign">
+          <Key>
+            <PropertyRef Name="PledgeCampaignId" />
+          </Key>
+          <Property Name="PledgeCampaignId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PledgeCampaignName" Type="String" Nullable="false" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="TargetAmount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="HasCompleted" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblContributionCategory" Relationship="DonationManagementModel.FK_tblPledgeCampaigns_tblContributionCategories" FromRole="tblPledgeCampaigns" ToRole="tblContributionCategories" />
+          <NavigationProperty Name="tblPledges" Relationship="DonationManagementModel.FK_Pledges_PledgeCampaigns" FromRole="tblPledgeCampaigns" ToRole="tblPledges" />
+        </EntityType>
+        <EntityType Name="tblPledge">
+          <Key>
+            <PropertyRef Name="PledgeId" />
+          </Key>
+          <Property Name="PledgeId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PledgeAmount" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonor" Relationship="DonationManagementModel.FK_Pledges_Donors" FromRole="tblPledges" ToRole="tblDonors" />
+          <NavigationProperty Name="tblPledgeCampaign" Relationship="DonationManagementModel.FK_Pledges_PledgeCampaigns" FromRole="tblPledges" ToRole="tblPledgeCampaigns" />
+        </EntityType>
+        <EntityType Name="tblStateProvince">
+          <Key>
+            <PropertyRef Name="StateProvinceId" />
+          </Key>
+          <Property Name="StateProvinceId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="StateProvinceName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StateProvicenCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="CreatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreatedBy" Type="Int32" Nullable="false" />
+          <Property Name="UpdatedOn" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedBy" Type="Int32" Nullable="false" />
+          <Property Name="Version" Type="Binary" Nullable="false" MaxLength="8" FixedLength="true" p1:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblAddresses" Relationship="DonationManagementModel.FK_Addresses_StateProvinces" FromRole="tblStateProvinces" ToRole="tblAddresses" />
+          <NavigationProperty Name="tblCountry" Relationship="DonationManagementModel.FK_StateProvinces_Countries" FromRole="tblStateProvinces" ToRole="tblCountries" />
+        </EntityType>
+        <Association Name="FK_Addresses_StateProvinces">
+          <End Role="tblStateProvinces" Type="DonationManagementModel.tblStateProvince" Multiplicity="0..1" />
+          <End Role="tblAddresses" Type="DonationManagementModel.tblAddress" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DonorAdresses_Addresses">
+          <End Role="tblAddresses" Type="DonationManagementModel.tblAddress" Multiplicity="1" />
+          <End Role="tblDonorAdresses" Type="DonationManagementModel.tblDonorAdress" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Households_Addresses">
+          <End Role="tblAddresses" Type="DonationManagementModel.tblAddress" Multiplicity="1" />
+          <End Role="tblHouseholds" Type="DonationManagementModel.tblHousehold" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_OrganizationAddresses_Addresses">
+          <End Role="tblAddresses" Type="DonationManagementModel.tblAddress" Multiplicity="1" />
+          <End Role="tblOrganizationAddresses" Type="DonationManagementModel.tblOrganizationAddress" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DonorAdresses_AddressTypes">
+          <End Role="tblAddressTypes" Type="DonationManagementModel.tblAddressType" Multiplicity="1" />
+          <End Role="tblDonorAdresses" Type="DonationManagementModel.tblDonorAdress" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_OrganizationAddresses_AddressTypes">
+          <End Role="tblAddressTypes" Type="DonationManagementModel.tblAddressType" Multiplicity="1" />
+          <End Role="tblOrganizationAddresses" Type="DonationManagementModel.tblOrganizationAddress" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Batches_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.tblOrganization" Multiplicity="1" />
+          <End Role="tblBatches" Type="DonationManagementModel.tblBatch" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Contributions_Batches">
+          <End Role="tblBatches" Type="DonationManagementModel.tblBatch" Multiplicity="0..1" />
+          <End Role="tblContributions" Type="DonationManagementModel.tblContribution" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DonorContactInfos_ContactInfos">
+          <End Role="tblContactInfos" Type="DonationManagementModel.tblContactInfo" Multiplicity="1" />
+          <End Role="tblDonorContactInfos" Type="DonationManagementModel.tblDonorContactInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_OrganizationContactInfos_ContactInfos">
+          <End Role="tblContactInfos" Type="DonationManagementModel.tblContactInfo" Multiplicity="1" />
+          <End Role="tblOrganizationContactInfos" Type="DonationManagementModel.tblOrganizationContactInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DonorContactInfos_ContactInfoTypes">
+          <End Role="tblContactInfoTypes" Type="DonationManagementModel.tblContactInfoType" Multiplicity="1" />
+          <End Role="tblDonorContactInfos" Type="DonationManagementModel.tblDonorContactInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_OrganizationContactInfos_ContactInfoTypes">
+          <End Role="tblContactInfoTypes" Type="DonationManagementModel.tblContactInfoType" Multiplicity="1" />
+          <End Role="tblOrganizationContactInfos" Type="DonationManagementModel.tblOrganizationContactInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_ContributionCategories_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.tblOrganization" Multiplicity="1" />
+          <End Role="tblContributionCategories" Type="DonationManagementModel.tblContributionCategory" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Contributions_ContributionCategories">
+          <End Role="tblContributionCategories" Type="DonationManagementModel.tblContributionCategory" Multiplicity="1" />
+          <End Role="tblContributions" Type="DonationManagementModel.tblContribution" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_tblPledgeCampaigns_tblContributionCategories">
+          <End Role="tblContributionCategories" Type="DonationManagementModel.tblContributionCategory" Multiplicity="1" />
+          <End Role="tblPledgeCampaigns" Type="DonationManagementModel.tblPledgeCampaign" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Contributions_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.tblDonor" Multiplicity="0..1" />
+          <End Role="tblContributions" Type="DonationManagementModel.tblContribution" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Contributions_PaymentTypes">
+          <End Role="tblPaymentTypes" Type="DonationManagementModel.tblPaymentType" Multiplicity="1" />
+          <End Role="tblContributions" Type="DonationManagementModel.tblContribution" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_StateProvinces_Countries">
+          <End Role="tblCountries" Type="DonationManagementModel.tblCountry" Multiplicity="1" />
+          <End Role="tblStateProvinces" Type="DonationManagementModel.tblStateProvince" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DonorAdresses_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.tblDonor" Multiplicity="1" />
+          <End Role="tblDonorAdresses" Type="DonationManagementModel.tblDonorAdress" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DonorContactInfos_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.tblDonor" Multiplicity="1" />
+          <End Role="tblDonorContactInfos" Type="DonationManagementModel.tblDonorContactInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DonorGroups_DonorGroupTypes">
+          <End Role="tblDonorGroupTypes" Type="DonationManagementModel.tblDonorGroupType" Multiplicity="1" />
+          <End Role="tblDonorGroups" Type="DonationManagementModel.tblDonorGroup" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_DonorGroups_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.tblDonor" Multiplicity="1" />
+          <End Role="tblDonorGroups" Type="DonationManagementModel.tblDonorGroup" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Donors_DonorTypes">
+          <End Role="tblDonorTypes" Type="DonationManagementModel.tblDonorType" Multiplicity="1" />
+          <End Role="tblDonors" Type="DonationManagementModel.tblDonor" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Donors_MaritalStatuses">
+          <End Role="tblMaritalStatuses" Type="DonationManagementModel.tblMaritalStatus" Multiplicity="0..1" />
+          <End Role="tblDonors" Type="DonationManagementModel.tblDonor" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Donors_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.tblOrganization" Multiplicity="1" />
+          <End Role="tblDonors" Type="DonationManagementModel.tblDonor" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_HouseholdMembers_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.tblDonor" Multiplicity="1" />
+          <End Role="tblHouseholdMembers" Type="DonationManagementModel.tblHouseholdMember" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Pledges_Donors">
+          <End Role="tblDonors" Type="DonationManagementModel.tblDonor" Multiplicity="1" />
+          <End Role="tblPledges" Type="DonationManagementModel.tblPledge" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_tblDonors_tblGenders">
+          <End Role="tblGenders" Type="DonationManagementModel.tblGender" Multiplicity="0..1" />
+          <End Role="tblDonors" Type="DonationManagementModel.tblDonor" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_HouseholdMembers_Households">
+          <End Role="tblHouseholds" Type="DonationManagementModel.tblHousehold" Multiplicity="1" />
+          <End Role="tblHouseholdMembers" Type="DonationManagementModel.tblHouseholdMember" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Households_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.tblOrganization" Multiplicity="1" />
+          <End Role="tblHouseholds" Type="DonationManagementModel.tblHousehold" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_OrganizationAddresses_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.tblOrganization" Multiplicity="1" />
+          <End Role="tblOrganizationAddresses" Type="DonationManagementModel.tblOrganizationAddress" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_OrganizationContactInfos_Organizations">
+          <End Role="tblOrganizations" Type="DonationManagementModel.tblOrganization" Multiplicity="1" />
+          <End Role="tblOrganizationContactInfos" Type="DonationManagementModel.tblOrganizationContactInfo" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Pledges_PledgeCampaigns">
+          <End Role="tblPledgeCampaigns" Type="DonationManagementModel.tblPledgeCampaign" Multiplicity="1" />
+          <End Role="tblPledges" Type="DonationManagementModel.tblPledge" Multiplicity="*" />
+        </Association>
+        <EntityType Name="tblDonorStatus">
+          <Key>
+            <PropertyRef Name="DonorStatusId" />
+          </Key>
+          <Property Type="Byte" Name="DonorStatusId" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="DonorStatus" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsActive" Nullable="false" />
+          <Property Type="DateTime" Name="CreatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="CreatedBy" Nullable="false" />
+          <Property Type="DateTime" Name="UpdatedOn" Nullable="false" Precision="3" />
+          <Property Type="Int32" Name="UpdatedBy" Nullable="false" />
+          <Property Type="Binary" Name="Version" Nullable="false" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <NavigationProperty Name="tblDonors" Relationship="DonationManagementModel.FK_Donors_DonorStatus1" FromRole="tblDonorStatus" ToRole="tblDonor" />
+        </EntityType>
+        <Association Name="FK_Donors_DonorStatus1">
+          <End Type="DonationManagementModel.tblDonorStatus" Role="tblDonorStatus" Multiplicity="1" />
+          <End Type="DonationManagementModel.tblDonor" Role="tblDonor" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DonationManagementModelStoreContainer" CdmEntityContainer="DonationManagementEntities">
+          <EntitySetMapping Name="tblAddresses">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblAddress">
+              <MappingFragment StoreEntitySet="tblAddresses">
+                <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+                <ScalarProperty Name="AddressLine1" ColumnName="AddressLine1" />
+                <ScalarProperty Name="AddressLine2" ColumnName="AddressLine2" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="PostalCode" ColumnName="PostalCode" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblAddressTypes">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblAddressType">
+              <MappingFragment StoreEntitySet="tblAddressTypes">
+                <ScalarProperty Name="AddressTypeId" ColumnName="AddressTypeId" />
+                <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblBatches">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblBatch">
+              <MappingFragment StoreEntitySet="tblBatches">
+                <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+                <ScalarProperty Name="BatchName" ColumnName="BatchName" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContactInfos">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblContactInfo">
+              <MappingFragment StoreEntitySet="tblContactInfos">
+                <ScalarProperty Name="ContactInfoId" ColumnName="ContactInfoId" />
+                <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="WirelessPhone" ColumnName="WirelessPhone" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContactInfoTypes">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblContactInfoType">
+              <MappingFragment StoreEntitySet="tblContactInfoTypes">
+                <ScalarProperty Name="ContactInfoTypeId" ColumnName="ContactInfoTypeId" />
+                <ScalarProperty Name="ContactInfoType" ColumnName="ContactInfoType" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContributionCategories">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblContributionCategory">
+              <MappingFragment StoreEntitySet="tblContributionCategories">
+                <ScalarProperty Name="ContributionCategoryId" ColumnName="ContributionCategoryId" />
+                <ScalarProperty Name="ContributionCategory" ColumnName="ContributionCategory" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblContributions">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblContribution">
+              <MappingFragment StoreEntitySet="tblContributions">
+                <ScalarProperty Name="ContributionId" ColumnName="ContributionId" />
+                <ScalarProperty Name="ContributionDate" ColumnName="ContributionDate" />
+                <ScalarProperty Name="Contribution" ColumnName="Contribution" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Custom1" ColumnName="Custom1" />
+                <ScalarProperty Name="Custom2" ColumnName="Custom2" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCountries">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblCountry">
+              <MappingFragment StoreEntitySet="tblCountries">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ISO2" ColumnName="ISO2" />
+                <ScalarProperty Name="ISO3" ColumnName="ISO3" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDonorAdresses">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblDonorAdress">
+              <MappingFragment StoreEntitySet="tblDonorAdresses">
+                <ScalarProperty Name="DonorAddressId" ColumnName="DonorAddressId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDonorContactInfos">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblDonorContactInfo">
+              <MappingFragment StoreEntitySet="tblDonorContactInfos">
+                <ScalarProperty Name="DonorContactInfoId" ColumnName="DonorContactInfoId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDonorGroups">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblDonorGroup">
+              <MappingFragment StoreEntitySet="tblDonorGroups">
+                <ScalarProperty Name="DonorGroupId" ColumnName="DonorGroupId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDonorGroupTypes">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblDonorGroupType">
+              <MappingFragment StoreEntitySet="tblDonorGroupTypes">
+                <ScalarProperty Name="DonorGroupTypeId" ColumnName="DonorGroupTypeId" />
+                <ScalarProperty Name="DonorGroupType" ColumnName="DonorGroupType" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDonors">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblDonor">
+              <MappingFragment StoreEntitySet="tblDonors">
+                <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblDonorTypes">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblDonorType">
+              <MappingFragment StoreEntitySet="tblDonorTypes">
+                <ScalarProperty Name="DonorTypeId" ColumnName="DonorTypeId" />
+                <ScalarProperty Name="DonorType" ColumnName="DonorType" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblGenders">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblGender">
+              <MappingFragment StoreEntitySet="tblGenders">
+                <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHouseholdMembers">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblHouseholdMember">
+              <MappingFragment StoreEntitySet="tblHouseholdMembers">
+                <ScalarProperty Name="HouseholdMemberId" ColumnName="HouseholdMemberId" />
+                <ScalarProperty Name="IsHouseholdHead" ColumnName="IsHouseholdHead" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblHouseholds">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblHousehold">
+              <MappingFragment StoreEntitySet="tblHouseholds">
+                <ScalarProperty Name="HouseholdId" ColumnName="HouseholdId" />
+                <ScalarProperty Name="HouseholdName" ColumnName="HouseholdName" />
+                <ScalarProperty Name="HouseholdPhone" ColumnName="HouseholdPhone" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblMaritalStatuses">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblMaritalStatus">
+              <MappingFragment StoreEntitySet="tblMaritalStatuses">
+                <ScalarProperty Name="MaritalStatusId" ColumnName="MaritalStatusId" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrganizationAddresses">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblOrganizationAddress">
+              <MappingFragment StoreEntitySet="tblOrganizationAddresses">
+                <ScalarProperty Name="OrganizationAddressId" ColumnName="OrganizationAddressId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrganizationContactInfos">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblOrganizationContactInfo">
+              <MappingFragment StoreEntitySet="tblOrganizationContactInfos">
+                <ScalarProperty Name="OrganizationContactInfoId" ColumnName="OrganizationContactInfoId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblOrganizations">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblOrganization">
+              <MappingFragment StoreEntitySet="tblOrganizations">
+                <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+                <ScalarProperty Name="OrganizationName" ColumnName="OrganizationName" />
+                <ScalarProperty Name="Abbreviation" ColumnName="Abbreviation" />
+                <ScalarProperty Name="FederalTaxId" ColumnName="FederalTaxId" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPaymentTypes">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblPaymentType">
+              <MappingFragment StoreEntitySet="tblPaymentTypes">
+                <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+                <ScalarProperty Name="PaymentType" ColumnName="PaymentType" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPledgeCampaigns">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblPledgeCampaign">
+              <MappingFragment StoreEntitySet="tblPledgeCampaigns">
+                <ScalarProperty Name="PledgeCampaignId" ColumnName="PledgeCampaignId" />
+                <ScalarProperty Name="PledgeCampaignName" ColumnName="PledgeCampaignName" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="TargetAmount" ColumnName="TargetAmount" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="HasCompleted" ColumnName="HasCompleted" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblPledges">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblPledge">
+              <MappingFragment StoreEntitySet="tblPledges">
+                <ScalarProperty Name="PledgeId" ColumnName="PledgeId" />
+                <ScalarProperty Name="PledgeAmount" ColumnName="PledgeAmount" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblStateProvinces">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblStateProvince">
+              <MappingFragment StoreEntitySet="tblStateProvinces">
+                <ScalarProperty Name="StateProvinceId" ColumnName="StateProvinceId" />
+                <ScalarProperty Name="StateProvinceName" ColumnName="StateProvinceName" />
+                <ScalarProperty Name="StateProvicenCode" ColumnName="StateProvicenCode" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Addresses_StateProvinces" TypeName="DonationManagementModel.FK_Addresses_StateProvinces" StoreEntitySet="tblAddresses">
+            <EndProperty Name="tblStateProvinces">
+              <ScalarProperty Name="StateProvinceId" ColumnName="StateProvinceId" />
+            </EndProperty>
+            <EndProperty Name="tblAddresses">
+              <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+            </EndProperty>
+            <Condition ColumnName="StateProvinceId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DonorAdresses_Addresses" TypeName="DonationManagementModel.FK_DonorAdresses_Addresses" StoreEntitySet="tblDonorAdresses">
+            <EndProperty Name="tblAddresses">
+              <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+            </EndProperty>
+            <EndProperty Name="tblDonorAdresses">
+              <ScalarProperty Name="DonorAddressId" ColumnName="DonorAddressId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Households_Addresses" TypeName="DonationManagementModel.FK_Households_Addresses" StoreEntitySet="tblHouseholds">
+            <EndProperty Name="tblAddresses">
+              <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+            </EndProperty>
+            <EndProperty Name="tblHouseholds">
+              <ScalarProperty Name="HouseholdId" ColumnName="HouseholdId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_OrganizationAddresses_Addresses" TypeName="DonationManagementModel.FK_OrganizationAddresses_Addresses" StoreEntitySet="tblOrganizationAddresses">
+            <EndProperty Name="tblAddresses">
+              <ScalarProperty Name="AddressId" ColumnName="AddressId" />
+            </EndProperty>
+            <EndProperty Name="tblOrganizationAddresses">
+              <ScalarProperty Name="OrganizationAddressId" ColumnName="OrganizationAddressId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DonorAdresses_AddressTypes" TypeName="DonationManagementModel.FK_DonorAdresses_AddressTypes" StoreEntitySet="tblDonorAdresses">
+            <EndProperty Name="tblAddressTypes">
+              <ScalarProperty Name="AddressTypeId" ColumnName="AddressTypeId" />
+            </EndProperty>
+            <EndProperty Name="tblDonorAdresses">
+              <ScalarProperty Name="DonorAddressId" ColumnName="DonorAddressId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_OrganizationAddresses_AddressTypes" TypeName="DonationManagementModel.FK_OrganizationAddresses_AddressTypes" StoreEntitySet="tblOrganizationAddresses">
+            <EndProperty Name="tblAddressTypes">
+              <ScalarProperty Name="AddressTypeId" ColumnName="AddressTypeId" />
+            </EndProperty>
+            <EndProperty Name="tblOrganizationAddresses">
+              <ScalarProperty Name="OrganizationAddressId" ColumnName="OrganizationAddressId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Batches_Organizations" TypeName="DonationManagementModel.FK_Batches_Organizations" StoreEntitySet="tblBatches">
+            <EndProperty Name="tblOrganizations">
+              <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            </EndProperty>
+            <EndProperty Name="tblBatches">
+              <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Contributions_Batches" TypeName="DonationManagementModel.FK_Contributions_Batches" StoreEntitySet="tblContributions">
+            <EndProperty Name="tblBatches">
+              <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+            </EndProperty>
+            <EndProperty Name="tblContributions">
+              <ScalarProperty Name="ContributionId" ColumnName="ContributionId" />
+            </EndProperty>
+            <Condition ColumnName="BatchId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DonorContactInfos_ContactInfos" TypeName="DonationManagementModel.FK_DonorContactInfos_ContactInfos" StoreEntitySet="tblDonorContactInfos">
+            <EndProperty Name="tblContactInfos">
+              <ScalarProperty Name="ContactInfoId" ColumnName="ContactInfoId" />
+            </EndProperty>
+            <EndProperty Name="tblDonorContactInfos">
+              <ScalarProperty Name="DonorContactInfoId" ColumnName="DonorContactInfoId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_OrganizationContactInfos_ContactInfos" TypeName="DonationManagementModel.FK_OrganizationContactInfos_ContactInfos" StoreEntitySet="tblOrganizationContactInfos">
+            <EndProperty Name="tblContactInfos">
+              <ScalarProperty Name="ContactInfoId" ColumnName="ContactInfoId" />
+            </EndProperty>
+            <EndProperty Name="tblOrganizationContactInfos">
+              <ScalarProperty Name="OrganizationContactInfoId" ColumnName="OrganizationContactInfoId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DonorContactInfos_ContactInfoTypes" TypeName="DonationManagementModel.FK_DonorContactInfos_ContactInfoTypes" StoreEntitySet="tblDonorContactInfos">
+            <EndProperty Name="tblContactInfoTypes">
+              <ScalarProperty Name="ContactInfoTypeId" ColumnName="ContactInfoTypeId" />
+            </EndProperty>
+            <EndProperty Name="tblDonorContactInfos">
+              <ScalarProperty Name="DonorContactInfoId" ColumnName="DonorContactInfoId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_OrganizationContactInfos_ContactInfoTypes" TypeName="DonationManagementModel.FK_OrganizationContactInfos_ContactInfoTypes" StoreEntitySet="tblOrganizationContactInfos">
+            <EndProperty Name="tblContactInfoTypes">
+              <ScalarProperty Name="ContactInfoTypeId" ColumnName="ContactInfoTypeId" />
+            </EndProperty>
+            <EndProperty Name="tblOrganizationContactInfos">
+              <ScalarProperty Name="OrganizationContactInfoId" ColumnName="OrganizationContactInfoId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_ContributionCategories_Organizations" TypeName="DonationManagementModel.FK_ContributionCategories_Organizations" StoreEntitySet="tblContributionCategories">
+            <EndProperty Name="tblOrganizations">
+              <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            </EndProperty>
+            <EndProperty Name="tblContributionCategories">
+              <ScalarProperty Name="ContributionCategoryId" ColumnName="ContributionCategoryId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Contributions_ContributionCategories" TypeName="DonationManagementModel.FK_Contributions_ContributionCategories" StoreEntitySet="tblContributions">
+            <EndProperty Name="tblContributionCategories">
+              <ScalarProperty Name="ContributionCategoryId" ColumnName="ContributionCategoryId" />
+            </EndProperty>
+            <EndProperty Name="tblContributions">
+              <ScalarProperty Name="ContributionId" ColumnName="ContributionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_tblPledgeCampaigns_tblContributionCategories" TypeName="DonationManagementModel.FK_tblPledgeCampaigns_tblContributionCategories" StoreEntitySet="tblPledgeCampaigns">
+            <EndProperty Name="tblContributionCategories">
+              <ScalarProperty Name="ContributionCategoryId" ColumnName="ContributionCategoryId" />
+            </EndProperty>
+            <EndProperty Name="tblPledgeCampaigns">
+              <ScalarProperty Name="PledgeCampaignId" ColumnName="PledgeCampaignId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Contributions_Donors" TypeName="DonationManagementModel.FK_Contributions_Donors" StoreEntitySet="tblContributions">
+            <EndProperty Name="tblDonors">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+            <EndProperty Name="tblContributions">
+              <ScalarProperty Name="ContributionId" ColumnName="ContributionId" />
+            </EndProperty>
+            <Condition ColumnName="DonorId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Contributions_PaymentTypes" TypeName="DonationManagementModel.FK_Contributions_PaymentTypes" StoreEntitySet="tblContributions">
+            <EndProperty Name="tblPaymentTypes">
+              <ScalarProperty Name="PaymentTypeId" ColumnName="PaymentTypeId" />
+            </EndProperty>
+            <EndProperty Name="tblContributions">
+              <ScalarProperty Name="ContributionId" ColumnName="ContributionId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_StateProvinces_Countries" TypeName="DonationManagementModel.FK_StateProvinces_Countries" StoreEntitySet="tblStateProvinces">
+            <EndProperty Name="tblCountries">
+              <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+            </EndProperty>
+            <EndProperty Name="tblStateProvinces">
+              <ScalarProperty Name="StateProvinceId" ColumnName="StateProvinceId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DonorAdresses_Donors" TypeName="DonationManagementModel.FK_DonorAdresses_Donors" StoreEntitySet="tblDonorAdresses">
+            <EndProperty Name="tblDonors">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+            <EndProperty Name="tblDonorAdresses">
+              <ScalarProperty Name="DonorAddressId" ColumnName="DonorAddressId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DonorContactInfos_Donors" TypeName="DonationManagementModel.FK_DonorContactInfos_Donors" StoreEntitySet="tblDonorContactInfos">
+            <EndProperty Name="tblDonors">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+            <EndProperty Name="tblDonorContactInfos">
+              <ScalarProperty Name="DonorContactInfoId" ColumnName="DonorContactInfoId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DonorGroups_DonorGroupTypes" TypeName="DonationManagementModel.FK_DonorGroups_DonorGroupTypes" StoreEntitySet="tblDonorGroups">
+            <EndProperty Name="tblDonorGroupTypes">
+              <ScalarProperty Name="DonorGroupTypeId" ColumnName="DonorGroupTypeId" />
+            </EndProperty>
+            <EndProperty Name="tblDonorGroups">
+              <ScalarProperty Name="DonorGroupId" ColumnName="DonorGroupId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_DonorGroups_Donors" TypeName="DonationManagementModel.FK_DonorGroups_Donors" StoreEntitySet="tblDonorGroups">
+            <EndProperty Name="tblDonors">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+            <EndProperty Name="tblDonorGroups">
+              <ScalarProperty Name="DonorGroupId" ColumnName="DonorGroupId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Donors_DonorTypes" TypeName="DonationManagementModel.FK_Donors_DonorTypes" StoreEntitySet="tblDonors">
+            <EndProperty Name="tblDonorTypes">
+              <ScalarProperty Name="DonorTypeId" ColumnName="DonorTypeId" />
+            </EndProperty>
+            <EndProperty Name="tblDonors">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Donors_MaritalStatuses" TypeName="DonationManagementModel.FK_Donors_MaritalStatuses" StoreEntitySet="tblDonors">
+            <EndProperty Name="tblMaritalStatuses">
+              <ScalarProperty Name="MaritalStatusId" ColumnName="MaritalStatusId" />
+            </EndProperty>
+            <EndProperty Name="tblDonors">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+            <Condition ColumnName="MaritalStatusId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Donors_Organizations" TypeName="DonationManagementModel.FK_Donors_Organizations" StoreEntitySet="tblDonors">
+            <EndProperty Name="tblOrganizations">
+              <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            </EndProperty>
+            <EndProperty Name="tblDonors">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_HouseholdMembers_Donors" TypeName="DonationManagementModel.FK_HouseholdMembers_Donors" StoreEntitySet="tblHouseholdMembers">
+            <EndProperty Name="tblDonors">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+            <EndProperty Name="tblHouseholdMembers">
+              <ScalarProperty Name="HouseholdMemberId" ColumnName="HouseholdMemberId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Pledges_Donors" TypeName="DonationManagementModel.FK_Pledges_Donors" StoreEntitySet="tblPledges">
+            <EndProperty Name="tblDonors">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+            <EndProperty Name="tblPledges">
+              <ScalarProperty Name="PledgeId" ColumnName="PledgeId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_tblDonors_tblGenders" TypeName="DonationManagementModel.FK_tblDonors_tblGenders" StoreEntitySet="tblDonors">
+            <EndProperty Name="tblGenders">
+              <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+            </EndProperty>
+            <EndProperty Name="tblDonors">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+            <Condition ColumnName="GenderId" IsNull="false" />
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_HouseholdMembers_Households" TypeName="DonationManagementModel.FK_HouseholdMembers_Households" StoreEntitySet="tblHouseholdMembers">
+            <EndProperty Name="tblHouseholds">
+              <ScalarProperty Name="HouseholdId" ColumnName="HouseholdId" />
+            </EndProperty>
+            <EndProperty Name="tblHouseholdMembers">
+              <ScalarProperty Name="HouseholdMemberId" ColumnName="HouseholdMemberId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Households_Organizations" TypeName="DonationManagementModel.FK_Households_Organizations" StoreEntitySet="tblHouseholds">
+            <EndProperty Name="tblOrganizations">
+              <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            </EndProperty>
+            <EndProperty Name="tblHouseholds">
+              <ScalarProperty Name="HouseholdId" ColumnName="HouseholdId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_OrganizationAddresses_Organizations" TypeName="DonationManagementModel.FK_OrganizationAddresses_Organizations" StoreEntitySet="tblOrganizationAddresses">
+            <EndProperty Name="tblOrganizations">
+              <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            </EndProperty>
+            <EndProperty Name="tblOrganizationAddresses">
+              <ScalarProperty Name="OrganizationAddressId" ColumnName="OrganizationAddressId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_OrganizationContactInfos_Organizations" TypeName="DonationManagementModel.FK_OrganizationContactInfos_Organizations" StoreEntitySet="tblOrganizationContactInfos">
+            <EndProperty Name="tblOrganizations">
+              <ScalarProperty Name="OrganizationId" ColumnName="OrganizationId" />
+            </EndProperty>
+            <EndProperty Name="tblOrganizationContactInfos">
+              <ScalarProperty Name="OrganizationContactInfoId" ColumnName="OrganizationContactInfoId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Pledges_PledgeCampaigns" TypeName="DonationManagementModel.FK_Pledges_PledgeCampaigns" StoreEntitySet="tblPledges">
+            <EndProperty Name="tblPledgeCampaigns">
+              <ScalarProperty Name="PledgeCampaignId" ColumnName="PledgeCampaignId" />
+            </EndProperty>
+            <EndProperty Name="tblPledges">
+              <ScalarProperty Name="PledgeId" ColumnName="PledgeId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="tblDonorStatuses">
+            <EntityTypeMapping TypeName="DonationManagementModel.tblDonorStatus">
+              <MappingFragment StoreEntitySet="tblDonorStatuses">
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+                <ScalarProperty Name="UpdatedOn" ColumnName="UpdatedOn" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="DonorStatus" ColumnName="DonorStatus" />
+                <ScalarProperty Name="DonorStatusId" ColumnName="DonorStatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Donors_DonorStatus1" TypeName="DonationManagementModel.FK_Donors_DonorStatus1" StoreEntitySet="tblDonors">
+            <EndProperty Name="tblDonor">
+              <ScalarProperty Name="DonorId" ColumnName="DonorId" />
+            </EndProperty>
+            <EndProperty Name="tblDonorStatus">
+              <ScalarProperty Name="DonorStatusId" ColumnName="DonorStatusId" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CC97C811-9AD8-49D6-B1EB-B1FC1525C10D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DonationManagement.Data</RootNamespace>
+    <AssemblyName>DonationManagement.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="DMSDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMSDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMSDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DMSDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DMSDataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tblAddress.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblAddressType.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblBatch.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContactInfo.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContactInfoType.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContribution.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblContributionCategory.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblCountry.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDonor.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDonorAdress.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDonorContactInfo.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDonorGroup.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDonorGroupType.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDonorStatus.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblDonorType.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblGender.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHousehold.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblHouseholdMember.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblMaritalStatus.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOrganization.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOrganizationAddress.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblOrganizationContactInfo.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPaymentType.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPledge.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblPledgeCampaign.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tblStateProvince.cs">
+      <DependentUpon>DMSDataModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="DMSDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DMSDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="DMSDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DMSDataModel.edmx</DependentUpon>
+      <LastGenOutput>DMSDataModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="DMSDataModel.edmx.diagram">
+      <DependentUpon>DMSDataModel.edmx</DependentUpon>
+    </None>
+    <None Include="DMSDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DMSDataModel.edmx</DependentUpon>
+      <LastGenOutput>DMSDataModel.cs</LastGenOutput>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
