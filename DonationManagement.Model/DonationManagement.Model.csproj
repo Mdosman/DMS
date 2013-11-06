@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5673A85-486F-4865-AE41-D0019FB6E030}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DonationManagement.Model</RootNamespace>
+    <AssemblyName>DonationManagement.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.0.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201311061551482_InitialMigration.cs" />
+    <Compile Include="Migrations\201311061551482_InitialMigration.Designer.cs">
+      <DependentUpon>201311061551482_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\AddressType.cs" />
+    <Compile Include="Models\Batch.cs" />
+    <Compile Include="Models\ContactInfo.cs" />
+    <Compile Include="Models\ContactInfoType.cs" />
+    <Compile Include="Models\Contribution.cs" />
+    <Compile Include="Models\ContributionCategory.cs" />
+    <Compile Include="Models\Country.cs" />
+    <Compile Include="Models\Donor.cs" />
+    <Compile Include="Models\DonorAdress.cs" />
+    <Compile Include="Models\DonorContactInfo.cs" />
+    <Compile Include="Models\DonorGroup.cs" />
+    <Compile Include="Models\DonorGroupType.cs" />
+    <Compile Include="Models\DonorStatus.cs" />
+    <Compile Include="Models\DonorType.cs" />
+    <Compile Include="Models\DonationManagementContext.cs" />
+    <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\Household.cs" />
+    <Compile Include="Models\HouseholdMember.cs" />
+    <Compile Include="Models\Mapping\AddressMap.cs" />
+    <Compile Include="Models\Mapping\AddressTypeMap.cs" />
+    <Compile Include="Models\Mapping\BatchMap.cs" />
+    <Compile Include="Models\Mapping\ContactInfoMap.cs" />
+    <Compile Include="Models\Mapping\ContactInfoTypeMap.cs" />
+    <Compile Include="Models\Mapping\ContributionCategoryMap.cs" />
+    <Compile Include="Models\Mapping\ContributionMap.cs" />
+    <Compile Include="Models\Mapping\CountryMap.cs" />
+    <Compile Include="Models\Mapping\DonorAdressMap.cs" />
+    <Compile Include="Models\Mapping\DonorContactInfoMap.cs" />
+    <Compile Include="Models\Mapping\DonorGroupMap.cs" />
+    <Compile Include="Models\Mapping\DonorGroupTypeMap.cs" />
+    <Compile Include="Models\Mapping\DonorMap.cs" />
+    <Compile Include="Models\Mapping\DonorStatusMap.cs" />
+    <Compile Include="Models\Mapping\DonorTypeMap.cs" />
+    <Compile Include="Models\Mapping\GenderMap.cs" />
+    <Compile Include="Models\Mapping\HouseholdMap.cs" />
+    <Compile Include="Models\Mapping\HouseholdMemberMap.cs" />
+    <Compile Include="Models\Mapping\MaritalStatusMap.cs" />
+    <Compile Include="Models\Mapping\OrganizationAddressMap.cs" />
+    <Compile Include="Models\Mapping\OrganizationContactInfoMap.cs" />
+    <Compile Include="Models\Mapping\OrganizationMap.cs" />
+    <Compile Include="Models\Mapping\PaymentTypeMap.cs" />
+    <Compile Include="Models\Mapping\PledgeCampaignMap.cs" />
+    <Compile Include="Models\Mapping\PledgeMap.cs" />
+    <Compile Include="Models\Mapping\StateProvinceMap.cs" />
+    <Compile Include="Models\MaritalStatus.cs" />
+    <Compile Include="Models\Organization.cs" />
+    <Compile Include="Models\OrganizationAddress.cs" />
+    <Compile Include="Models\OrganizationContactInfo.cs" />
+    <Compile Include="Models\PaymentType.cs" />
+    <Compile Include="Models\Pledge.cs" />
+    <Compile Include="Models\PledgeCampaign.cs" />
+    <Compile Include="Models\StateProvince.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201311061551482_InitialMigration.resx">
+      <DependentUpon>201311061551482_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
